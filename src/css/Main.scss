@@ -1,0 +1,77 @@
+@import "basic";
+.MainVisual {
+    h2 {
+        @include setH2;
+    }
+
+    .boxOffice {
+        display: flex;
+        flex-direction: column;
+
+        .service {
+            margin-bottom: 30px;
+            display: flex;
+
+            li ~ li {
+                &::before {
+                    content: "";
+                }
+            }
+
+            li {
+                display: flex;
+                flex: 1;
+                padding: 30px;
+                background: rgba(221, 221, 221, 0.394);
+                color: #000;
+
+                form {
+                    position: relative;
+                    display: flex;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 5px;
+                        height: 1px;
+                        width: 95%;
+                        background: #999;
+                    }
+
+                    input {
+                        border: none;
+                        background: none;
+                        padding: 10px;
+                    }
+
+                    button {
+                        position: absolute;
+                        top: 9px;
+                        right: 15px;
+                        border: none;
+                        background: none;
+                        color: #000;
+                        cursor: pointer;
+                    }
+                }
+
+                .link {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+
+                    i {
+                        font-size: 25px;
+                    }
+
+                    span {
+                        margin-left: 5px;
+                    }
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

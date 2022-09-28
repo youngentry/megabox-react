@@ -1,0 +1,25 @@
+:root {
+    --mc: #352461;
+    --gl: #413d39;
+}
+
+body {
+}
+
+.container {
+    margin: 0 auto;
+    width: 1100px;
+}
+
+@mixin positionAbsCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin setH2 {
+    display: block;
+    font-size: 25px;
+    line-height: 100px;
+}

@@ -1,0 +1,83 @@
+@import "basic";
+
+.Header {
+    position: relative;
+    display: flex;
+    height: 91px;
+    align-items: center;
+    background: #1b1511;
+    color: #fff;
+    border-bottom: 1px solid var(--gl);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            @include positionAbsCenter;
+
+            img {
+                width: 140px;
+                height: 47px;
+            }
+        }
+
+        .right {
+            .top {
+                justify-content: flex-end;
+            }
+            .icons {
+                margin-left: 30px;
+            }
+        }
+
+        .left {
+            .icons {
+                margin-right: 30px;
+            }
+        }
+
+        .left,
+        .right {
+            display: flex;
+            flex-direction: column;
+
+            .top,
+            .bottom {
+                display: flex;
+
+                .icons {
+                    display: flex;
+                    gap: 20px;
+                }
+            }
+
+            .top {
+                margin-bottom: 20px;
+                display: flex;
+                gap: 20px;
+                font-size: 15px;
+                font-weight: 300;
+                color: #999999;
+
+                li {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .bottom {
+                display: flex;
+                gap: 60px;
+                font-size: 19px;
+
+                i {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

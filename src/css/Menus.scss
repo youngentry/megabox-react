@@ -1,0 +1,24 @@
+.Menus {
+    ul {
+        display: flex;
+
+        li {
+            flex: 1;
+            padding: 10px 0;
+            font-size: 17px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-right: none;
+            border-bottom: 1px solid #503396;
+            cursor: pointer;
+
+            &:last-of-type {
+                border-right: 1px solid #ddd;
+            }
+
+            .on {
+                border-bottom: none;
+            }
+        }
+    }
+}
