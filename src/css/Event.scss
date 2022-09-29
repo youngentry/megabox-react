@@ -4,4 +4,45 @@
     h2 {
         @include setH2;
     }
+
+    h3 {
+        @include setH3;
+    }
+
+    .recoEvent {
+        background: #f8f8fa;
+
+        .box {
+            display: flex;
+            gap: 40px;
+
+            img {
+                width: 530px;
+                height: 245px;
+                border-radius: 5px;
+            }
+
+            p {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+
+                span {
+                    overflow: hidden;
+                    display: block;
+                }
+
+                .text {
+                    font-size: 14px;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    width: 60%;
+                }
+                .date {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 }

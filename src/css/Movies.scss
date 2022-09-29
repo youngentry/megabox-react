@@ -1,0 +1,7 @@
+@import "basic";
+
+.Movies {
+    h2 {
+        @include setH2;
+    }
+}

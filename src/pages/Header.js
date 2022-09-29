@@ -44,7 +44,7 @@ const Header = () => {
                             </div>
                         </li>
                         <li>
-                            <Link to="#!">영화</Link>
+                            <Link to="/movies">영화</Link>
                         </li>
                         <li>
                             <Link to="#!">예매</Link>
@@ -71,10 +71,10 @@ const Header = () => {
                             <Link to="/event">이벤트</Link>
                         </li>
                         <li>
-                            <Link to="#!">스토어</Link>
+                            <Link to="/store">스토어</Link>
                         </li>
                         <li>
-                            <Link to="#!">혜택</Link>
+                            <Link to="/benefit">혜택</Link>
                         </li>
                         <li className="icons">
                             <Link to="#!">

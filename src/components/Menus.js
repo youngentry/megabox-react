@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/Menus.scss";
 
-const Menus = ({ menuTitle }) => {
-    const [active, setActive] = useState();
+const Menus = ({ menuTitle, routeURL }) => {
+    const [active, setActive] = useState(0);
 
     return (
         <div className="Menus">
             <ul>
                 {menuTitle.map((el, idx) => {
                     return (
-                        <li
+                        <Link
+                            to={routeURL + el.link}
+                            className="link"
                             key={el.id}
-                            className={`${el.id == active + 1 ? "on" : ""}`}
-                            onClick={(e) => {
-                                setActive(idx);
-                            }}
                         >
-                            {el.title}
-                        </li>
+                            <li
+                                className={`${el.id == active + 1 ? "on" : ""}`}
+                                onClick={() => setActive(idx)}
+                            >
+                                {el.title}
+                            </li>
+                        </Link>
                     );
                 })}
             </ul>

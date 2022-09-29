@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "../css/Movie.scss";
 
 const MOVIEDATA = [
@@ -32,15 +33,17 @@ function Movie() {
                 {MOVIEDATA.map((el) => {
                     return (
                         <li key={el.id}>
-                            <figure>
-                                <img
-                                    src={
-                                        process.env.PUBLIC_URL +
-                                        `/assets/img/${el.imgSrc}`
-                                    }
-                                    alt=""
-                                />
-                            </figure>
+                            <Link to="#">
+                                <figure>
+                                    <img
+                                        src={
+                                            process.env.PUBLIC_URL +
+                                            `/assets/img/${el.imgSrc}`
+                                        }
+                                        alt=""
+                                    />
+                                </figure>
+                            </Link>
                             <div className="box">
                                 <button className="heart">
                                     <i>

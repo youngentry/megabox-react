@@ -1,0 +1,37 @@
+@import "basic";
+
+.Store {
+    h2 {
+        @include setH2;
+    }
+
+    .giftcard {
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .text {
+                flex: 1;
+
+                p {
+                    margin-bottom: 10px;
+                    font-size: 36px;
+                    color: #01738b;
+
+                    &:last-of-type {
+                        color: #503396;
+                    }
+                }
+
+                span {
+                    font-size: 17px;
+                    line-height: 70px;
+                }
+            }
+            .cardImg {
+                flex: 1;
+            }
+        }
+    }
+}

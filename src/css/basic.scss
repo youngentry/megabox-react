@@ -20,6 +20,14 @@ body {
 
 @mixin setH2 {
     display: block;
-    font-size: 25px;
+    font-size: 29px;
     line-height: 100px;
+}
+
+@mixin setH3 {
+    display: block;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 100px;
+    color: #503396;
 }
