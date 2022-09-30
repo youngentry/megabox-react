@@ -16,10 +16,12 @@ const routeURL = "/movies";
 
 /** App.js > Movies.js에서 movie props전달 rank, movieNm:영화이름, openDt:개봉일*/
 const Movies = ({ movie }) => {
+    // console.log("movie.js에서 props로 받은거:", movie, 2222222222222222);
     return (
         <section className="Movies">
             <div className="container">
                 <h2>전체영화</h2>
+                {console.log("inner:", movie)}
                 <Routes>
                     {MENUTITLE.map((it) => {
                         return (

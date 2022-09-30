@@ -27,9 +27,12 @@ const MOVIEDATA = [
 ];
 
 const Movie = ({ movie }) => {
+    console.log(movie);
+
     return (
         <div className="Movie">
             <ul>
+                {console.log("movie.js")}
                 {MOVIEDATA.map((el) => {
                     return (
                         <li key={el.id}>
