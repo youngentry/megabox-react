@@ -26,7 +26,7 @@ const MOVIEDATA = [
     },
 ];
 
-function Movie() {
+const Movie = ({ movie }) => {
     return (
         <div className="Movie">
             <ul>
@@ -57,8 +57,21 @@ function Movie() {
                     );
                 })}
             </ul>
+            <div className="movieBox">
+                {/** App.js > Movies.js 에서 movie props전달
+                  rank, movieNm:영화이름, openDt:개봉일*/}
+                {movie.map((el) => {
+                    return (
+                        <ul>
+                            <li>{el.rank}</li>
+                            <li>{el.movieNm}</li>
+                            <li>{el.openDt}</li>
+                        </ul>
+                    );
+                })}
+            </div>
         </div>
     );
-}
+};
 
 export default Movie;

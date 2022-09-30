@@ -52,6 +52,10 @@
                     background: #037b94;
                     border: none;
                     border-radius: 5px;
+
+                    &:hover {
+                        background: #037c94c9;
+                    }
                 }
             }
         }

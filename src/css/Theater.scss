@@ -15,6 +15,10 @@
                 flex: 1;
                 font-size: 17px;
                 text-align: center;
+                &.on {
+                    color: #fff;
+                    background: #555555;
+                }
 
                 strong {
                     display: block;

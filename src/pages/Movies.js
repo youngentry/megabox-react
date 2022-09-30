@@ -14,7 +14,8 @@ const MENUTITLE = [
 
 const routeURL = "/movies";
 
-const Moives = () => {
+/** App.js > Movies.js에서 movie props전달 rank, movieNm:영화이름, openDt:개봉일*/
+const Movies = ({ movie }) => {
     return (
         <section className="Movies">
             <div className="container">
@@ -35,10 +36,12 @@ const Moives = () => {
                         );
                     })}
                 </Routes>
-                <Movie />
+                {/** App.js 에서 movie props전달
+                  rank:순위, movieNm:영화이름, openDt:개봉일*/}
+                <Movie movie={movie} />
             </div>
         </section>
     );
 };
 
-export default Moives;
+export default Movies;
