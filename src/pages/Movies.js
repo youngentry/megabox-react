@@ -15,13 +15,13 @@ const MENUTITLE = [
 const routeURL = "/movies";
 
 /** App.js > Movies.js에서 movie props전달 rank, movieNm:영화이름, openDt:개봉일*/
-const Movies = ({ BOXOFFICE }) => {
-    console.log(BOXOFFICE, "2222222222222");
+const Movies = ({ movie }) => {
+    // console.log("movie.js에서 props로 받은거:", movie, 2222222222222222);
     return (
         <section className="Movies">
             <div className="container">
                 <h2>전체영화</h2>
-                {console.log("inner:", BOXOFFICE)}
+                {console.log("inner:", movie)}
                 <Routes>
                     {MENUTITLE.map((it) => {
                         return (
@@ -40,7 +40,7 @@ const Movies = ({ BOXOFFICE }) => {
                 </Routes>
                 {/** App.js 에서 movie props전달
                   rank:순위, movieNm:영화이름, openDt:개봉일*/}
-                <Movie BOXOFFICE={BOXOFFICE} />
+                <Movie movie={movie} />
             </div>
         </section>
     );
