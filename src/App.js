@@ -5,8 +5,7 @@ import Header from "./pages/Header";
 import Main from "./pages/Main";
 import Theater from "./pages/Theater";
 import Event from "./pages/Event";
-import Sub07 from "./pages/Sub07";
-import Sub08 from "./pages/Sub08";
+import Ticketing from "./pages/Ticketing";
 import Footer from "./pages/Footer";
 import Movies from "./pages/Movies";
 
@@ -25,8 +24,7 @@ function App() {
                 <Route path="/store/*" element={<Store />} />
                 <Route path="/benefit/*" element={<Benefit />} />
                 <Route path="/movies/*" element={<Movies />} />
-                <Route path="/sub07" element={<Sub07 />} />
-                <Route path="/sub08" element={<Sub08 />} />
+                <Route path="/ticketing" element={<Ticketing />} />
             </Routes>
             <Footer />
         </Wrapper>

@@ -27,7 +27,7 @@ const Main = () => {
                                 </form>
                             </li>
                             <li>
-                                <Link to="#!" className="link">
+                                <Link to="#" className="link">
                                     <i>
                                         <FaRegCalendarAlt />
                                     </i>
@@ -35,7 +35,7 @@ const Main = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#!" className="link">
+                                <Link to="#" className="link">
                                     <i>
                                         <FaWindowMaximize />
                                     </i>
@@ -43,7 +43,7 @@ const Main = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#!" className="link">
+                                <Link to="#" className="link">
                                     <i>
                                         <FaTicketAlt />
                                     </i>

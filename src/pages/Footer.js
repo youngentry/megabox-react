@@ -10,14 +10,14 @@ import {
 } from "react-icons/fa";
 
 const COMPANY = [
-    { id: 1, content: "회사소개", link: "#!" },
-    { id: 2, content: "인재채용", link: "#!" },
-    { id: 3, content: "사회공헌", link: "#!" },
-    { id: 4, content: "제휴/광고/부대사업문의", link: "#!" },
-    { id: 5, content: "이용약관", link: "#!" },
-    { id: 6, content: "위치기반서비스 이용약관", link: "#!" },
-    { id: 7, content: "개인정보처리방침", link: "#!" },
-    { id: 8, content: "윤리경영", link: "#!" },
+    { id: 1, content: "회사소개", link: "#" },
+    { id: 2, content: "인재채용", link: "#" },
+    { id: 3, content: "사회공헌", link: "#" },
+    { id: 4, content: "제휴/광고/부대사업문의", link: "#" },
+    { id: 5, content: "이용약관", link: "#" },
+    { id: 6, content: "위치기반서비스 이용약관", link: "#" },
+    { id: 7, content: "개인정보처리방침", link: "#" },
+    { id: 8, content: "윤리경영", link: "#" },
 ];
 
 const Footer = () => {

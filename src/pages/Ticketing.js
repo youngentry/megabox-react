@@ -1,0 +1,14 @@
+import React from "react";
+import "../css/Ticketing.scss";
+
+const Ticketing = () => {
+    return (
+        <section className="Ticketing">
+            <div className="container">
+                <h2>빠른예매</h2>
+            </div>
+        </section>
+    );
+};
+
+export default Ticketing;

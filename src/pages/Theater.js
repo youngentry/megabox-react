@@ -141,7 +141,7 @@ const Theater = () => {
                                 <ul>
                                     {el.city.map((li, idx) => (
                                         <li key={idx}>
-                                            <Link to="#!">{li}</Link>
+                                            <Link to="#">{li}</Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -150,7 +150,7 @@ const Theater = () => {
                     </div>
                     <div className="interest">
                         <span>나의 선호영화관 정보</span>
-                        <Link to="#!">
+                        <Link to="#">
                             <button>로그인하기</button>
                         </Link>
                     </div>

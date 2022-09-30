@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../css/Menus.scss";
 
 const Menus = ({ menuTitle, routeURL }) => {
-    const [active, setActive] = useState(0);
+    const [num, setNum] = useState(0);
 
     return (
         <div className="Menus">
@@ -16,8 +16,8 @@ const Menus = ({ menuTitle, routeURL }) => {
                             key={el.id}
                         >
                             <li
-                                className={`${el.id == active + 1 ? "on" : ""}`}
-                                onClick={() => setActive(idx)}
+                                className={`${idx == num ? "on" : ""}`}
+                                onClick={() => setNum(idx)}
                             >
                                 {el.title}
                             </li>
