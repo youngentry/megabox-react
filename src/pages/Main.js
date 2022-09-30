@@ -9,14 +9,14 @@ import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import "../css/Main.scss";
 
-const Main = () => {
+const Main = ({ BOXOFFICE }) => {
     return (
         <main>
             <section className="MainVisual">
                 <div className="container">
                     <h2>박스오피스</h2>
                     <div className="boxOffice">
-                        <Movie />
+                        <Movie BOXOFFICE={BOXOFFICE} />
                         <ul className="service">
                             <li>
                                 <form action="">
