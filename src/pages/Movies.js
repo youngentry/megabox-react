@@ -16,7 +16,6 @@ const routeURL = "/movies";
 
 /** App.js > Movies.js에서 movie props전달 rank, movieNm:영화이름, openDt:개봉일*/
 const Movies = ({ BOXOFFICE }) => {
-    console.log("App.js > Movies.js 영흥API props : ", BOXOFFICE);
     return (
         <section className="Movies">
             <div className="container">

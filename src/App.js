@@ -21,9 +21,7 @@ const App = () => {
     useEffect(() => {
         const key = "b4f3293a5bbeeb23428ff7f42088c8f2";
         const today = getToday();
-        const url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${
-            today - 1
-        }`;
+        const url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${today}`;
         const getMovie = async () => {
             const res = await axios.get(url);
             const BOXOFFICE = res.data.boxOfficeResult.dailyBoxOfficeList.map(
@@ -36,7 +34,6 @@ const App = () => {
                 }
             );
             setItm(BOXOFFICE);
-            console.log("App.js 정상적으로 영흥API 불러옴 : ", BOXOFFICE);
         };
         getMovie();
     }, []);
@@ -49,16 +46,41 @@ const App = () => {
                 <Wrapper>
                     <Header />
                     <Routes>
-                        <Route path="/" element={<Main BOXOFFICE={itm} />} />
-                        <Route path="/theater" element={<Theater />} />
-                        <Route path="/event/*" element={<Event />} />
-                        <Route path="/store/*" element={<Store />} />
-                        <Route path="/benefit/*" element={<Benefit />} />
+                        <Route
+                            path="/"
+                            exact={true}
+                            element={<Main BOXOFFICE={itm} />}
+                        />
+                        <Route
+                            path="/theater"
+                            exact={true}
+                            element={<Theater />}
+                        />
+                        <Route
+                            path="/event/*"
+                            exact={true}
+                            element={<Event />}
+                        />
+                        <Route
+                            path="/store/*"
+                            exact={true}
+                            element={<Store />}
+                        />
+                        <Route
+                            path="/benefit/*"
+                            exact={true}
+                            element={<Benefit />}
+                        />
                         <Route
                             path="/movies/*"
+                            exact={true}
                             element={<Movies BOXOFFICE={itm} />}
                         />
-                        <Route path="/ticketing" element={<Ticketing />} />
+                        <Route
+                            path="/ticketing"
+                            exact={true}
+                            element={<Ticketing />}
+                        />
                     </Routes>
                     <Footer />
                 </Wrapper>
