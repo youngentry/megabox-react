@@ -24,14 +24,13 @@ const getToday = () => {
     let month = today.getMonth() + 1; // 월
     let date = today.getDate(); // 날짜
 
-    // 날짜가 1일이라면 date를 전달의 마지막 날로 바꿉니다.
+    // 만일 1월 1일이라면 12월의 일수인 31일로 바꿉니다.
     if (date === 1 && month !== 12) {
-        date = monthArr[month];
-        // 1월이라면 12월의 일수인 31일로 바꿉니다.
-    } else {
         date = 31;
+        // 날짜가 1일이라면 date를 전달의 마지막 날로 바꿉니다.
+    } else {
+        date = monthArr[month];
     }
-
     return date === monthArr[month]
         ? `${year}${("00" + (month - 1)).slice(-2)}${("00" + date).slice(-2)}`
         : `${year}${("00" + month).slice(-2)}${("00" + date).slice(-2)}`;

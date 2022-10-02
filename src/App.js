@@ -34,6 +34,7 @@ const App = () => {
                 }
             );
             setItm(BOXOFFICE);
+            console.log(BOXOFFICE, today);
         };
         getMovie();
     }, []);

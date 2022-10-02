@@ -10,6 +10,7 @@
         "axios": "^0.27.2",
         "express": "^4.18.1",
         "gh-pages": "^4.0.0",
+        "http-proxy-middleware": "^2.0.6",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^4.4.0",
@@ -28,9 +29,9 @@
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
-        "server": "nodemon ./src/server.js",
-        "client": "npm start",
-        "dev": "concurrently \"npm run server\" \"npm run client"
+        "server": "cd server && nodemon server",
+        "client": "cd client && npm start",
+        "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client"
     },
     "eslintConfig": {
         "extends": [
