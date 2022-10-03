@@ -3,6 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./css/reset.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import axios from "axios";
+
+const index = () => {
+    axios.get("http://localhost:4000/").then((response) => {
+        console.log(response);
+    });
+    return <div></div>;
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,3 +20,5 @@ root.render(
         </BrowserRouter>
     </React.StrictMode>
 );
+
+export default index;
