@@ -20,6 +20,10 @@ const App = () => {
     const [itm, setItm] = useState();
 
     useEffect(() => {
+        axios.get("http://localhost:4000/").then((response) => {
+            console.log(response.data);
+        });
+
         const key = "b4f3293a5bbeeb23428ff7f42088c8f2";
         const today = getToday();
         const url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${today}`;
