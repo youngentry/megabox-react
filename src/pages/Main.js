@@ -8,12 +8,14 @@ import {
 import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import "../css/Main.scss";
+import NAVERDATA from "../data/NAVERDATA";
 
 const Main = ({ BOXOFFICE }) => {
     return (
         <main>
             <section className="MainVisual">
                 <div className="container">
+                    <NAVERDATA />
                     <h2>박스오피스</h2>
                     <div className="boxOffice">
                         <Movie BOXOFFICE={BOXOFFICE} />

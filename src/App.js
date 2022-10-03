@@ -14,6 +14,7 @@ import Benefit from "./pages/Benefit";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import getToday from "./modules/getToday";
+import index from ".";
 
 const App = () => {
     const [itm, setItm] = useState();
