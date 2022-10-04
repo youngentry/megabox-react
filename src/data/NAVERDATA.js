@@ -9,7 +9,7 @@ const NAVERMOVIEDATA = () => {
 
         const getNaverMovie = async () => {
             const res = await axios.get(url);
-            console.log(res.data.items, "dadsds");
+            console.log(res.data.items, "네이버영화 검색결과 데이터");
 
             const NAVERMOVIES = res.data.items.map((it) => {
                 return {

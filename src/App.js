@@ -12,9 +12,6 @@ import "./css/basic.scss";
 import Store from "./pages/Store";
 import Benefit from "./pages/Benefit";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import getToday from "./modules/getToday";
-import index from ".";
 import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
 import { NAVERMOVIEDATA } from "./data/NAVERDATA";
 
