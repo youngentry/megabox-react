@@ -5,8 +5,10 @@ var client_secret = "1Cgy20c7WS";
 
 app.get("/", function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
-    var api_url =
-        "https://openapi.naver.com/v1/search/movie.json?query=%EC%A3%BC%EC%8B%9D&display=10&start=1&genre=1"; // JSON 결과
+    // 여기다 검색 기능 구현하기
+    const searchWord = "%EC%A3%BC%EC%8B%9D";
+
+    var api_url = `https://openapi.naver.com/v1/search/movie.json?query=${searchWord}&display=10&start=1&genre=1`; // JSON 결과
     var request = require("request");
     var options = {
         url: api_url,

@@ -15,38 +15,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import getToday from "./modules/getToday";
 import index from ".";
+import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
+import { NAVERMOVIEDATA } from "./data/NAVERDATA";
 
 const App = () => {
-    const [itm, setItm] = useState();
-
-    useEffect(() => {
-        axios.get("http://localhost:4000/").then((response) => {
-            console.log(response.data);
-        });
-
-        const key = "b4f3293a5bbeeb23428ff7f42088c8f2";
-        const today = getToday();
-        const url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${today}`;
-        const getMovie = async () => {
-            const res = await axios.get(url);
-            const BOXOFFICE = res.data.boxOfficeResult.dailyBoxOfficeList.map(
-                (it) => {
-                    return {
-                        rank: it.rank,
-                        movieNm: it.movieNm,
-                        openDt: it.openDt,
-                    };
-                }
-            );
-            setItm(BOXOFFICE);
-            // console.log(BOXOFFICE, today);
-        };
-        getMovie();
-    }, []);
+    const BOXDATA = BOXOFFICEDATA();
+    const NAVERMOVIE = NAVERMOVIEDATA();
 
     return (
         <>
-            {!itm ? (
+            {!BOXDATA ? (
                 <div>loading...</div>
             ) : (
                 <Wrapper>
@@ -55,7 +33,12 @@ const App = () => {
                         <Route
                             path="/"
                             exact={true}
-                            element={<Main BOXOFFICE={itm} />}
+                            element={
+                                <Main
+                                    BOXDATA={BOXDATA}
+                                    NAVERMOVIE={NAVERMOVIE}
+                                />
+                            }
                         />
                         <Route
                             path="/theater"
@@ -80,7 +63,7 @@ const App = () => {
                         <Route
                             path="/movies/*"
                             exact={true}
-                            element={<Movies BOXOFFICE={itm} />}
+                            element={<Movies BOXDATA={BOXDATA} />}
                         />
                         <Route
                             path="/ticketing"

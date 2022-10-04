@@ -26,7 +26,7 @@ const MOVIEDATA = [
     },
 ];
 
-const Movie = ({ BOXOFFICE }) => {
+const Movie = ({ BOXDATA }) => {
     return (
         <div className="Movie">
             <ul>
@@ -60,7 +60,7 @@ const Movie = ({ BOXOFFICE }) => {
             <div className="movieBox">
                 {/** App.js > Movies.js 에서 movie props전달
                   rank, movieNm:영화이름, openDt:개봉일*/}
-                {BOXOFFICE.map((el, idx) => {
+                {BOXDATA.map((el, idx) => {
                     return (
                         <ul key={idx}>
                             <li>{el.rank}</li>

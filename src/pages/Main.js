@@ -8,17 +8,26 @@ import {
 import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import "../css/Main.scss";
-import NAVERDATA from "../data/NAVERDATA";
 
-const Main = ({ BOXOFFICE }) => {
+const Main = ({ BOXDATA, NAVERMOVIE }) => {
     return (
         <main>
             <section className="MainVisual">
                 <div className="container">
-                    <NAVERDATA />
                     <h2>박스오피스</h2>
+
+                    {NAVERMOVIE.map((el, idx) => {
+                        return (
+                            <ul key={idx}>
+                                <li>{el.title}</li>
+                                <li>{el.link}</li>
+                                <li>{el.image}</li>
+                            </ul>
+                        );
+                    })}
+
                     <div className="boxOffice">
-                        <Movie BOXOFFICE={BOXOFFICE} />
+                        <Movie BOXDATA={BOXDATA} />
                         <ul className="service">
                             <li>
                                 <form action="">

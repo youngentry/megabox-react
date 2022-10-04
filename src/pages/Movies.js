@@ -15,7 +15,7 @@ const MENUTITLE = [
 const routeURL = "/movies";
 
 /** App.js > Movies.js에서 movie props전달 rank, movieNm:영화이름, openDt:개봉일*/
-const Movies = ({ BOXOFFICE }) => {
+const Movies = ({ BOXDATA }) => {
     return (
         <section className="Movies">
             <div className="container">
@@ -38,7 +38,7 @@ const Movies = ({ BOXOFFICE }) => {
                 </Routes>
                 {/** App.js 에서 movie props전달
                   rank:순위, movieNm:영화이름, openDt:개봉일*/}
-                <Movie BOXOFFICE={BOXOFFICE} />
+                <Movie BOXDATA={BOXDATA} />
             </div>
         </section>
     );
