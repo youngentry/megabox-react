@@ -12,15 +12,13 @@ const BOXOFFICEDATA = () => {
         const getMovie = async () => {
             const res = await axios.get(url);
             console.log(res.data.boxOfficeResult.dailyBoxOfficeList);
-            const BOXOFFICE = res.data.boxOfficeResult.dailyBoxOfficeList.map(
-                (it) => {
-                    return {
-                        rank: it.rank,
-                        movieNm: it.movieNm,
-                        openDt: it.openDt,
-                    };
-                }
-            );
+            const BOXOFFICE = res.data.boxOfficeResult.dailyBoxOfficeList.map((it) => {
+                return {
+                    rank: it.rank,
+                    movieNm: it.movieNm,
+                    openDt: it.openDt,
+                };
+            });
             setItm(BOXOFFICE);
         };
         getMovie();
