@@ -1,0 +1,17 @@
+.MoreMovies {
+    display: flex;
+    margin-bottom: 10px;
+
+    button {
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            background: rgb(218, 218, 218);
+        }
+    }
+}

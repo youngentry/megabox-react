@@ -1,10 +1,5 @@
 import React from "react";
-import {
-    FaRegCalendarAlt,
-    FaSearch,
-    FaTicketAlt,
-    FaWindowMaximize,
-} from "react-icons/fa";
+import { FaRegCalendarAlt, FaSearch, FaTicketAlt, FaWindowMaximize } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import "../css/Main.scss";
@@ -16,7 +11,7 @@ const Main = ({ BOXDATA, NAVERMOVIE }) => {
                 <div className="container">
                     <h2>박스오피스</h2>
 
-                    {NAVERMOVIE.map((el, idx) => {
+                    {/* {NAVERMOVIE.map((el, idx) => {
                         return (
                             <ul key={idx}>
                                 <li>{el.title}</li>
@@ -24,7 +19,7 @@ const Main = ({ BOXDATA, NAVERMOVIE }) => {
                                 <li>{el.image}</li>
                             </ul>
                         );
-                    })}
+                    })} */}
 
                     <div className="boxOffice">
                         <Movie BOXDATA={BOXDATA} />

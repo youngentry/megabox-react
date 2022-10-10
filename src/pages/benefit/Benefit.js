@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import Menus from "../components/Menus";
-import "../css/Benefit.scss";
+import Menus from "../../components/Menus";
+import "../../css/Benefit.scss";
 
 const MENUTITLE = [
     { id: 1, title: "멤버십 안내", active: "on", link: "/membership" },
@@ -55,18 +55,7 @@ const Benefit = () => {
                 <h2>메가박스 멤버십</h2>
                 <Routes>
                     {MENUTITLE.map((it) => {
-                        return (
-                            <Route
-                                key={it.id}
-                                path="/*"
-                                element={
-                                    <Menus
-                                        menuTitle={MENUTITLE}
-                                        routeURL={routeURL}
-                                    />
-                                }
-                            />
-                        );
+                        return <Route key={it.id} path="/*" element={<Menus menuTitle={MENUTITLE} routeURL={routeURL} />} />;
                     })}
                 </Routes>
             </div>
@@ -74,9 +63,7 @@ const Benefit = () => {
                 <div className="container">
                     <div className="box">
                         <h3>MEGABOX MEMBERSHIP</h3>
-                        <span>
-                            메가박스 멤버십 회원에게만 제공되는 다양한 혜택
-                        </span>
+                        <span>메가박스 멤버십 회원에게만 제공되는 다양한 혜택</span>
                     </div>
                     <div className="des">
                         <h4>메가박스 멤버십 혜택</h4>
