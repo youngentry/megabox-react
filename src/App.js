@@ -4,7 +4,7 @@ import Wrapper from "./pages/Wrapper";
 import Header from "./pages/Header";
 import Main from "./pages/Main";
 import Theater from "./pages/Theater";
-import Event from "./pages/Event";
+import Event from "./pages/event/Event";
 import Ticketing from "./pages/Ticketing";
 import Footer from "./pages/Footer";
 import Movies from "./pages/Movies";

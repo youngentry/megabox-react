@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/Vip.scss";
+import "../../css/benefit/Vip.scss";
 import { FaRegQuestionCircle } from "react-icons/fa";
 
 const Vip = () => {

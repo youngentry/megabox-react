@@ -1,0 +1,16 @@
+.GiftCard {
+    ul {
+        li {
+            &::after {
+                content: "NEW";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                padding: 5px 8px;
+                font-size: 13px;
+                color: #fff;
+                background: #329eb1;
+            }
+        }
+    }
+}

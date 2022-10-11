@@ -66,7 +66,7 @@ const Header = () => {
                                 <Link to="/event">이벤트</Link>
                             </li>
                             <li>
-                                <Link to="/store">스토어</Link>
+                                <Link to="/store/newitem">스토어</Link>
                             </li>
                             <li>
                                 <Link to="/benefit/membership">혜택</Link>

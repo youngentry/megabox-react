@@ -4,4 +4,21 @@
     h2 {
         @include setH2;
     }
+
+    h3 {
+        @include setH3;
+    }
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        .more {
+            &:hover {
+                text-decoration: underline;
+            }
+            span {
+                vertical-align: 10%;
+            }
+        }
+    }
 }

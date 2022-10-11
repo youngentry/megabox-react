@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../css/Membership.scss";
+import "../../css/benefit/Membership.scss";
 
 const Membership = ({ MEMBERSHIPDATA }) => {
     return (

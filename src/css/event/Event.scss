@@ -1,0 +1,12 @@
+@import "../basic";
+
+.Event {
+    h2 {
+        @include setH2;
+    }
+
+    h3 {
+        @include setH3;
+        padding-top: 50px;
+    }
+}
