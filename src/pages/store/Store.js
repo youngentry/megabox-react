@@ -25,7 +25,9 @@ const Store = () => {
                     {MENUTITLE.map((it) => {
                         return <Route key={it.id} path="/*" element={<Menus menuTitle={MENUTITLE} routeURL={routeURL} />} />;
                     })}
-                    <Route path="/newitem" element={<NewItem />} />
+                </Routes>
+                <Routes>
+                    <Route path="/newitem" element={<NewItem num={4} />} />
                     <Route path="/giftcard" element={<Giftcard />} />
                     <Route path="/megaticket" element={<Megaticket />} />
                     <Route path="/food" element={<Food />} />

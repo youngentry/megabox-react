@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/store/Goods.scss";
 
-const Goods = ({ STOREDATA }) => {
+const Goods = ({ STOREDATA, num }) => {
     return (
         <div className="Goods">
             <ul>
-                {STOREDATA.map((el) => {
+                {STOREDATA.slice(0, num).map((el) => {
                     return (
                         <li key={el.id}>
                             <Link to="#">

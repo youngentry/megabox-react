@@ -15,11 +15,11 @@ const STOREDATA = [
     { id: 10, imgSrc: "megaticket10", content: "패밀리패키지", des: "2D 일반관람권 3매 + 팝콘(R)2 + 탄산음료(R)2", discount: "52,000원", price: "43,000원" },
 ];
 
-const Megaticket = () => {
+const Megaticket = ({ num }) => {
     return (
         <div className="Megaticket">
             <ul>
-                <Goods STOREDATA={STOREDATA} />
+                <Goods STOREDATA={STOREDATA} num={num} />
             </ul>
         </div>
     );

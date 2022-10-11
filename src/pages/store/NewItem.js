@@ -6,7 +6,7 @@ import Food from "./Food";
 import Giftcard from "./GiftCard";
 import Megaticket from "./Megaticket";
 
-const NewItem = () => {
+const NewItem = ({ num }) => {
     return (
         <div className="NewItem">
             <div className="container">
@@ -35,7 +35,7 @@ const NewItem = () => {
                         <span>더보기</span> <FaAngleRight />
                     </Link>
                 </div>
-                <Megaticket />
+                <Megaticket num={num} />
                 <div className="title">
                     <h3>팝콘/음료/굿즈</h3>
                     <Link className="more" to="/store/food">
