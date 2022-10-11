@@ -6,12 +6,14 @@ const Megapick = ({ MEGAPICKDATA, num }) => {
     return (
         <div className="MegaPick">
             <div className="container">
-                <h3>메가Pick</h3>
-                <ul>
-                    {MEGAPICKDATA.slice(0, num).map((el) => {
-                        return <Events key={el.id} EVENTDATA={el} />;
-                    })}
-                </ul>
+                {num !== 4 ? (
+                    <p>
+                        전체 <span>{MEGAPICKDATA.length}</span>건
+                    </p>
+                ) : (
+                    ""
+                )}
+                <Events MEGAPICKDATA={MEGAPICKDATA} num={num} />
             </div>
         </div>
     );

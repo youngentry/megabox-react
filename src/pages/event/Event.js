@@ -43,7 +43,7 @@ const Event = () => {
             </div>
 
             <Routes>
-                <Route path="/allevent" element={<AllEvent MEGAPICKDATA={MEGAPICKDATA} />} />
+                <Route path="/allevent" element={<AllEvent MEGAPICKDATA={MEGAPICKDATA} num={4} />} />
                 <Route path="/megapick" element={<Megapick MEGAPICKDATA={MEGAPICKDATA} />} />
             </Routes>
         </section>

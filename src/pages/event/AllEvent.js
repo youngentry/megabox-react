@@ -7,6 +7,7 @@ const AllEvent = ({ MEGAPICKDATA }) => {
         <div>
             <Recommendation />
             <div className="container">
+                <h3>메가Pick</h3>
                 <Megapick MEGAPICKDATA={MEGAPICKDATA} num={4} />
             </div>
         </div>
