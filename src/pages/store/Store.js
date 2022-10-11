@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Menus from "../../components/Menus";
 import "../../css/store/Store.scss";
 import Giftcard from "./GiftCard";

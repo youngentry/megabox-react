@@ -2,11 +2,12 @@ import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Menus from "../../components/Menus";
 import "../../css/event/Event.scss";
+import AllEvent from "./AllEvent";
 import Megapick from "./Megapick";
 import Recommendation from "./Recommendation";
 
 const MENUTITLE = [
-    { id: 1, title: "전체", active: "on", link: "/" },
+    { id: 1, title: "전체", active: "on", link: "/allevent" },
     { id: 2, title: "메가Pick", link: "/megapick" },
     { id: 3, title: "영화", link: "/movie" },
     { id: 4, title: "극장", link: "/theater" },
@@ -40,13 +41,11 @@ const Event = () => {
                     })}
                 </Routes>
             </div>
-            <Recommendation />
-            <div className="container">
-                <Routes>
-                    <Route path="/" element={<Megapick MEGAPICKDATA={MEGAPICKDATA} num={2} />} />
-                    <Route path="/megapick" element={<Megapick MEGAPICKDATA={MEGAPICKDATA} num={4} />} />
-                </Routes>
-            </div>
+
+            <Routes>
+                <Route path="/allevent" element={<AllEvent MEGAPICKDATA={MEGAPICKDATA} />} />
+                <Route path="/megapick" element={<Megapick MEGAPICKDATA={MEGAPICKDATA} />} />
+            </Routes>
         </section>
     );
 };

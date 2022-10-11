@@ -1,17 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { GET } from "../../Store/module/megapick";
 
 const Events = ({ EVENTDATA }) => {
-    const data = useSelector((state) => state.movie);
-    const dispatch = useDispatch();
-    // const data = useSelector(state => state.movie)
     return (
-        <div onClick={() => dispatch(GET({}))}>
-            {data.slice(0, 4).map((it) => {
-                return <div>{it.id}</div>;
-            })}
-        </div>
+        <li>
+            <figure>
+                <img src={process.env.PUBLIC_URL + `/assets/img/event/${EVENTDATA.imgSrc}.jpg`} alt="" />
+            </figure>
+        </li>
     );
 };
 

@@ -63,7 +63,7 @@ const Header = () => {
                         </ul>
                         <ul className="bottom">
                             <li>
-                                <Link to="/event">이벤트</Link>
+                                <Link to="/event/allevent">이벤트</Link>
                             </li>
                             <li>
                                 <Link to="/store/newitem">스토어</Link>
