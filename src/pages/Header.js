@@ -10,13 +10,7 @@ const Header = () => {
                 <nav>
                     <h1>
                         <Link to="/">
-                            <img
-                                src={
-                                    process.env.PUBLIC_URL +
-                                    "/assets/img/megabox-logo.png"
-                                }
-                                alt="LOGO"
-                            ></img>
+                            <img src={process.env.PUBLIC_URL + "/assets/img/megabox-logo.png"} alt="LOGO"></img>
                         </Link>
                     </h1>
                     <div className="left">
@@ -75,7 +69,7 @@ const Header = () => {
                                 <Link to="/store">스토어</Link>
                             </li>
                             <li>
-                                <Link to="/benefit">혜택</Link>
+                                <Link to="/benefit/membership">혜택</Link>
                             </li>
                             <li className="icons">
                                 <Link to="#">

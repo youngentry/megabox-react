@@ -1,0 +1,7 @@
+@import "../basic";
+
+.Store {
+    h2 {
+        @include setH2;
+    }
+}

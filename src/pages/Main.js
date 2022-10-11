@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaRegCalendarAlt, FaSearch, FaTicketAlt, FaWindowMaximize } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Movie from "../components/Movie";
 import "../css/Main.scss";
 
 const Main = ({ BOXDATA, NAVERMOVIE }) => {
+    const showCount = useRef(1);
+
     return (
         <main>
             <section className="MainVisual">
@@ -22,7 +24,7 @@ const Main = ({ BOXDATA, NAVERMOVIE }) => {
                     })} */}
 
                     <div className="boxOffice">
-                        <Movie BOXDATA={BOXDATA} />
+                        <Movie BOXDATA={BOXDATA} showCount={showCount} />
                         <ul className="service">
                             <li>
                                 <form action="">

@@ -9,7 +9,7 @@ import Ticketing from "./pages/Ticketing";
 import Footer from "./pages/Footer";
 import Movies from "./pages/Movies";
 import "./css/basic.scss";
-import Store from "./pages/Store";
+import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
 import { useEffect, useRef, useState } from "react";
 import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
