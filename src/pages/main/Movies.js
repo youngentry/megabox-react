@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Menus from "../components/Menus";
-import MoreMovies from "../components/MoreMovies";
-import Movie from "../components/Movie";
-import "../css/Movies.scss";
+import Menus from "../../components/Menus";
+import MoreMovies from "../../components/MoreMovies";
+import Movie from "../../components/Movie";
+import "../../css/main/Movies.scss";
 
 const MENUTITLE = [
     { id: 1, title: "박스오피스", active: "on", link: "/" },

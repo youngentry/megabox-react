@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/Theater.scss";
+import "../../css/main/Theater.scss";
 
 const THEATER = [
     {
@@ -28,16 +28,7 @@ const THEATER = [
     {
         id: 2,
         region: "경기",
-        city: [
-            "강남222",
-            "강남대로(씨티)",
-            "강동",
-            "군자",
-            "강남대로(씨티)",
-            "강동",
-            "강남대로(씨티)",
-            "강동",
-        ],
+        city: ["강남222", "강남대로(씨티)", "강동", "군자", "강남대로(씨티)", "강동", "강남대로(씨티)", "강동"],
     },
     {
         id: 3,
@@ -70,22 +61,7 @@ const THEATER = [
     {
         id: 5,
         region: "부산/대구/경상",
-        city: [
-            "강남555",
-            "강남대로(씨티)",
-            "강동",
-            "강남대로(씨티)",
-            "강동",
-            "강남대로(씨티)",
-            "강동",
-            "강남대로(씨티)",
-            "강동",
-            "강남대로(씨티)",
-            "강동",
-            "강남대로(씨티)",
-            "강동",
-            "군자",
-        ],
+        city: ["강남555", "강남대로(씨티)", "강동", "강남대로(씨티)", "강동", "강남대로(씨티)", "강동", "강남대로(씨티)", "강동", "강남대로(씨티)", "강동", "강남대로(씨티)", "강동", "군자"],
     },
     {
         id: 6,
@@ -110,12 +86,7 @@ const Theater = () => {
                     <div className="district">
                         {THEATER.map((el, index) => {
                             return (
-                                <ul
-                                    key={el.id}
-                                    className={`region ${
-                                        el.id === region + 1 ? "on" : ""
-                                    }`}
-                                >
+                                <ul key={el.id} className={`region ${el.id === region + 1 ? "on" : ""}`}>
                                     <li>
                                         <strong
                                             onClick={(e) => {
@@ -132,12 +103,7 @@ const Theater = () => {
                     </div>
                     <div className="place">
                         {THEATER.map((el, idx) => (
-                            <li
-                                key={idx}
-                                className={`city ${
-                                    el.id === region + 1 ? "on" : ""
-                                }`}
-                            >
+                            <li key={idx} className={`city ${el.id === region + 1 ? "on" : ""}`}>
                                 <ul>
                                     {el.city.map((li, idx) => (
                                         <li key={idx}>

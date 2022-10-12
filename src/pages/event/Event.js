@@ -7,7 +7,7 @@ import Curtaincall from "./Curtaincall";
 import EventMovie from "./EventMovie";
 import Megapick from "./Megapick";
 import Promotion from "./Promotion";
-import Theater from "./Theater";
+import Theater from "./EventTheater";
 
 const MENUTITLE = [
     { id: 1, title: "전체", active: "on", link: "/allevent" },

@@ -6,7 +6,7 @@ import EventMovie from "./EventMovie";
 import Megapick from "./Megapick";
 import Promotion from "./Promotion";
 import Recommendation from "./Recommendation";
-import Theater from "./Theater";
+import Theater from "./EventTheater";
 
 const AllEvent = ({ MEGAPICKDATA }) => {
     return (

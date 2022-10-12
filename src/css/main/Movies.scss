@@ -1,6 +1,6 @@
-@import "basic";
+@import "../basic";
 
-.Ticketing {
+.Movies {
     h2 {
         @include setH2;
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Ticketing.scss";
+import "../../css/main/Ticketing.scss";
 
 const Ticketing = () => {
     return (
