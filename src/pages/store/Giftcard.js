@@ -11,9 +11,7 @@ const STOREDATA = [
 const Giftcard = () => {
     return (
         <div className="GiftCard">
-            <ul>
-                <Goods STOREDATA={STOREDATA} />
-            </ul>
+            <Goods STOREDATA={STOREDATA} />
         </div>
     );
 };

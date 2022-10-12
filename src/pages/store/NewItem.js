@@ -26,7 +26,7 @@ const NewItem = ({ num }) => {
                         </Link>
                     </li>
                     <li>
-                        <div className="title">
+                        <div className="title giftcard">
                             <h3>기프트카드</h3>
                             <Link className="more" to="/store/giftcard">
                                 <span>더보기</span> <FaAngleRight />
@@ -35,7 +35,7 @@ const NewItem = ({ num }) => {
                         <Giftcard />
                     </li>
                     <li>
-                        <div className="title">
+                        <div className="title megaticket">
                             <h3>메가티켓</h3>
                             <Link className="more" to="/store/megaticket">
                                 <span>더보기</span> <FaAngleRight />
@@ -44,7 +44,7 @@ const NewItem = ({ num }) => {
                         <Megaticket num={num} />
                     </li>
                     <li>
-                        <div className="title">
+                        <div className="title food">
                             <h3>팝콘/음료/굿즈</h3>
                             <Link className="more" to="/store/food">
                                 <span>더보기</span> <FaAngleRight />

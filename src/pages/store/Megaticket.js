@@ -18,9 +18,7 @@ const STOREDATA = [
 const Megaticket = ({ num }) => {
     return (
         <div className="Megaticket">
-            <ul>
-                <Goods STOREDATA={STOREDATA} num={num} />
-            </ul>
+            <Goods STOREDATA={STOREDATA} num={num} />
         </div>
     );
 };

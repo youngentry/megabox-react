@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/event/Events.scss";
 
-const Events = ({ MEGAPICKDATA, num }) => {
+const Events = ({ EVENTDATA, num, category }) => {
     return (
         <div className="Events">
             <ul>
-                {MEGAPICKDATA.slice(0, num).map((el) => {
+                {EVENTDATA.slice(0, num)
+                .map((el) => {
                     return (
                         <li key={el.id}>
                             <Link to="#">

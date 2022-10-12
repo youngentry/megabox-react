@@ -10,9 +10,7 @@ const STOREDATA = [
 const Food = () => {
     return (
         <div className="Food">
-            <ul>
-                <Goods STOREDATA={STOREDATA} />
-            </ul>
+            <Goods STOREDATA={STOREDATA} />
         </div>
     );
 };
