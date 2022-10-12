@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/Menus.scss";
+import "../css/components/Menus.scss";
 
 const Menus = ({ menuTitle, routeURL }) => {
     const [num, setNum] = useState(0);
@@ -10,15 +10,8 @@ const Menus = ({ menuTitle, routeURL }) => {
             <ul>
                 {menuTitle.map((el, idx) => {
                     return (
-                        <Link
-                            to={routeURL + el.link}
-                            className="link"
-                            key={el.id}
-                        >
-                            <li
-                                className={`${idx == num ? "on" : ""}`}
-                                onClick={() => setNum(idx)}
-                            >
+                        <Link to={routeURL + el.link} className="link" key={el.id}>
+                            <li className={`${idx == num ? "on" : ""}`} onClick={() => setNum(idx)}>
                                 {el.title}
                             </li>
                         </Link>

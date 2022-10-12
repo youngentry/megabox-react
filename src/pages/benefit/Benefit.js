@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Menus from "../../components/Menus";
-import "../../css/Benefit.scss";
+import "../../css/benefit/Benefit.scss";
 import Membership from "./Membership";
 import Vip from "./Vip";
 
