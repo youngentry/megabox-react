@@ -5,6 +5,7 @@ import "../../css/event/Event.scss";
 import AllEvent from "./AllEvent";
 import EventMovie from "./EventMovie";
 import Megapick from "./Megapick";
+import Promotion from "./Promotion";
 import Theater from "./Theater";
 
 const MENUTITLE = [
@@ -35,6 +36,7 @@ const Event = () => {
                 <Route path="/megapick" element={<Megapick />} />
                 <Route path="/eventmovie" element={<EventMovie />} />
                 <Route path="/theater" element={<Theater />} />
+                <Route path="/promotion" element={<Promotion />} />
             </Routes>
         </section>
     );

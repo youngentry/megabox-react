@@ -1,6 +1,5 @@
 import React from "react";
 import Events from "./Events";
-// import "../../css/event/Theater.scss";
 
 const THEATERDATA = [
     { id: 1, imgSrc: "theater01", title: "돌비 시네마 콜렉션 <듄> 재개봉 기념 A3포스터 증정", period: "2022.10.12 ~ 2022.10.23" },
