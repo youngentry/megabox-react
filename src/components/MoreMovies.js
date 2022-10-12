@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "../css/MoreMovies.scss";
+import "../css/components/MoreMovies.scss";
 
 const MoreMovies = ({ setShowCount }) => {
     const num = useRef(1);

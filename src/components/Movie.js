@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "../css/Movie.scss";
+import "../css/components/Movie.scss";
 
 const MOVIEDATA = [
     {
