@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Menus from "../../components/Menus";
 import "../../css/event/Event.scss";
 import AllEvent from "./AllEvent";
+import Curtaincall from "./Curtaincall";
 import EventMovie from "./EventMovie";
 import Megapick from "./Megapick";
 import Promotion from "./Promotion";
@@ -14,7 +15,7 @@ const MENUTITLE = [
     { id: 3, title: "영화", link: "/eventmovie" },
     { id: 4, title: "극장", link: "/theater" },
     { id: 5, title: "제휴/할인", link: "/promotion" },
-    { id: 6, title: "시사회/무대인사", link: "/premiere" },
+    { id: 6, title: "시사회/무대인사", link: "/curtaincall" },
 ];
 
 const routeURL = "/event";
@@ -37,6 +38,7 @@ const Event = () => {
                 <Route path="/eventmovie" element={<EventMovie />} />
                 <Route path="/theater" element={<Theater />} />
                 <Route path="/promotion" element={<Promotion />} />
+                <Route path="/curtaincall" element={<Curtaincall />} />
             </Routes>
         </section>
     );
