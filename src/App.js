@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 
 import Wrapper from "./pages/Wrapper";
-import Header from "./pages/Header";
-import Main from "./pages/Main";
+import Header from "./pages/main/Header";
+import Main from "./pages/main/Main";
 import Theater from "./pages/Theater";
 import Event from "./pages/event/Event";
 import Ticketing from "./pages/Ticketing";
-import Footer from "./pages/Footer";
+import Footer from "./pages/main/Footer";
 import Movies from "./pages/Movies";
 import "./css/basic.scss";
 import Store from "./pages/store/Store";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Header.scss";
+import "../../css/main/Header.scss";
 import { FaBars, FaSearch, FaRegCalendarAlt, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
