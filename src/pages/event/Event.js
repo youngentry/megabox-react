@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Menus from "../../components/Menus";
 import "../../css/event/Event.scss";
 import AllEvent from "./AllEvent";
 import EventMovie from "./EventMovie";
 import Megapick from "./Megapick";
-import Recommendation from "./Recommendation";
+import Theater from "./Theater";
 
 const MENUTITLE = [
     { id: 1, title: "전체", active: "on", link: "/allevent" },
@@ -34,6 +34,7 @@ const Event = () => {
                 <Route path="/allevent" element={<AllEvent num={4} />} />
                 <Route path="/megapick" element={<Megapick />} />
                 <Route path="/eventmovie" element={<EventMovie />} />
+                <Route path="/theater" element={<Theater />} />
             </Routes>
         </section>
     );
