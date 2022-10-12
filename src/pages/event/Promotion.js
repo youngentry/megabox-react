@@ -8,7 +8,6 @@ const PROMOTIONDATA = [
     { id: 4, imgSrc: "promotion04", title: "Dolby cinema Collection", period: "2022.09.14 ~ 2022.11.08" },
     { id: 5, imgSrc: "promotion05", title: "메가박스 오리지널 티켓 Re.13 <사랑은 비를 타고>", period: "2022.09.21 ~ 2022.10.12" },
     { id: 6, imgSrc: "promotion06", title: "나도 영화 평론가! 관람평 쓰고 포인트 받자!", period: "2022.07.01 ~ 2022.12.31" },
-    { id: 7, imgSrc: "promotion07", title: "메가박스 오리지널 티켓북 시즌2", period: "2022.10.12 ~ 2022.10.23" },
 ];
 
 const Promotion = ({ num }) => {
