@@ -19,8 +19,6 @@ const routeURL = "/movies";
 const Movies = ({ BOXDATA }) => {
     const [showCount, setShowCount] = useState(1);
 
-    useEffect(() => {}, [showCount]);
-
     return (
         <section className="Movies">
             <div className="container">

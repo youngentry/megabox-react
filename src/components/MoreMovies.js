@@ -6,17 +6,11 @@ const MoreMovies = ({ setShowCount }) => {
     const showCountPlus = (num) => {
         num.current++;
         setShowCount(num.current);
+        console.log(num);
     };
 
-    // const [isNoMore, setIsNoMore] = useState(false);
-    // const toggleIsNoMore = () => setIsNoMore(!isNoMore);
-    // if (showCount > MOVIEDATA.length)
-
-    return (
-        <div className="MoreMovies">
-            <button onClick={() => showCountPlus(num)}>더보기</button>
-        </div>
-    );
+    // 4 * 4 까지 출력하게 되면 더보기 버튼이 사라짐
+    return <div className="MoreMovies">{num.current < 4 ? <button onClick={() => showCountPlus(num)}>더보기</button> : ""}</div>;
 };
 
 export default MoreMovies;
