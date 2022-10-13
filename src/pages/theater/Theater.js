@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaAngleRight } from "react-icons/fa";
 import "../../css/main/Theater.scss";
+import Event from "../event/Event";
+import Events from "../event/Events";
+import Recommendation from "../event/Recommendation";
 
 const THEATER = [
     {
@@ -82,7 +86,7 @@ const Theater = () => {
         <section className="Theater">
             <div className="container">
                 <h2>전체극장</h2>
-                <div className="box">
+                <div className="find">
                     <div className="district">
                         {THEATER.map((el, index) => {
                             return (
@@ -121,6 +125,14 @@ const Theater = () => {
                         </Link>
                     </div>
                 </div>
+                <div className="title theaterEvent">
+                    <h3>극장 이벤트</h3>
+                    <Link className="more" to="/event/theater">
+                        <span>더보기</span> <FaAngleRight />
+                    </Link>
+                </div>
+                {/* Theater > .recoEvent 백그라운드, 패딩, p, h3 {display:none}  */}
+                <Recommendation />
             </div>
         </section>
     );
