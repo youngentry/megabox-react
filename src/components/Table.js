@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/components/Table.scss";
 
-const Table = () => {
+const Table = ({ theaterTable }) => {
     const colWidth = (px) => {
         const style = {
             width: `${px}px`,
@@ -15,13 +15,16 @@ const Table = () => {
         <table className="board">
             <caption>극장, 제목, 지역, 등록일</caption>
             <colgroup>
-                {colWidth(150)}
+                {colWidth(70)}
+                {colWidth(170)}
                 <col></col>
                 {colWidth(150)}
                 {colWidth(120)}
             </colgroup>
+
             <thead>
                 <tr>
+                    <th className="numHead">번호</th>
                     <th>극장</th>
                     <th>제목</th>
                     <th>지역</th>
@@ -29,14 +32,19 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>코엑스</td>
-                    <td className="title">
-                        <Link to="#">[코엑스] 부티크 프라이빗 공사에 따른 이용 안내 (10/11~12월 중순)</Link>
-                    </td>
-                    <td>서울</td>
-                    <td>2022.10.11</td>
-                </tr>
+                {theaterTable.map((el) => {
+                    return (
+                        <tr>
+                            <td className="numBody">{el.number}</td>
+                            <td>{el.place}</td>
+                            <td className="title">
+                                <Link to={el.link}>{el.title}</Link>
+                            </td>
+                            <td>{el.region}</td>
+                            <td>{el.date}</td>
+                        </tr>
+                    );
+                })}
             </tbody>
         </table>
     );

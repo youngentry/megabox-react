@@ -80,6 +80,14 @@ const THEATER = [
     },
 ];
 
+const theaterTable = [
+    { id: 1, number: "1", place: "코엑스", title: "	[코엑스] 부티크 프라이빗 공사에 따른 이용 안내 (10/11~12월 중순)", region: "서울", date: "2022.10.11", link: "#" },
+    { id: 2, number: "2", place: "구미강동", title: "[구미강동] 10월 7일 건물정전으로 인한 상영중단 및 취소 안내", region: "부산/대구/경상	", date: "2022.10.11", link: "#" },
+    { id: 3, number: "3", place: "경북도청", title: "	[경북도청] 전산시스템 점검 일정 안내 (10/4 화요일 오전 9시부터~)", region: "부산/대구/경상	", date: "2022.09.28", link: "#" },
+    { id: 4, number: "4", place: "대전현대아울렛", title: "[긴급] 대전현대아울렛 화재로 영화관 이용불가 안내", region: "대전/충청/세종	", date: "2022.09.26", link: "#" },
+    { id: 5, number: "5", place: "상암월드컵경기장", title: "[상암월드컵경기장] 22년 9월 27(화) 축구 국가대표 평가전 경기 당일 주차 안내", region: "서울", date: "2022.09.20", link: "#" },
+];
+
 const Theater = () => {
     const [region, setRegion] = useState(0);
 
@@ -146,7 +154,7 @@ const Theater = () => {
                                 <span>더보기</span> <FaAngleRight />
                             </Link>
                         </div>
-                        <Table />
+                        <Table theaterTable={theaterTable} />
                     </li>
                 </ul>
             </div>
