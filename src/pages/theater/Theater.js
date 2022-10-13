@@ -5,6 +5,7 @@ import "../../css/main/Theater.scss";
 import Event from "../event/Event";
 import Events from "../event/Events";
 import Recommendation from "../event/Recommendation";
+import Table from "../../components/Table";
 
 const THEATER = [
     {
@@ -145,6 +146,7 @@ const Theater = () => {
                                 <span>더보기</span> <FaAngleRight />
                             </Link>
                         </div>
+                        <Table />
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,35 @@
+.board {
+    border-top: 1px solid #555;
+    caption {
+        font-size: 0;
+    }
+
+    thead {
+        tr {
+            text-align: center;
+            line-height: 45px;
+            background: #f2f4f5;
+            border-bottom: 1px solid #ddd;
+
+            th {
+                font-weight: 500;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            text-align: center;
+            line-height: 45px;
+            border-bottom: 1px solid #ddd;
+
+            .title {
+                text-align: start;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
