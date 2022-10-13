@@ -11,7 +11,7 @@ const BOXOFFICEDATA = () => {
         const url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${today}`;
         const getMovie = async () => {
             const res = await axios.get(url);
-            console.log(res.data.boxOfficeResult.dailyBoxOfficeList);
+            // console.log(res.data.boxOfficeResult.dailyBoxOfficeList);
             const BOXOFFICE = res.data.boxOfficeResult.dailyBoxOfficeList.map((it) => {
                 return {
                     rank: it.rank,

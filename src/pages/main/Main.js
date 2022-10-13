@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Movie from "../../components/Movie";
 import "../../css/main/Main.scss";
 
-const Main = ({ BOXDATA, NAVERMOVIE }) => {
+const Main = ({ BOXDATA, NAVERMOVIE, TRENDINGDATA }) => {
     const [showCount, setShowCount] = useState(1);
 
     return (
@@ -12,6 +12,18 @@ const Main = ({ BOXDATA, NAVERMOVIE }) => {
             <section className="MainVisual">
                 <div className="container">
                     <h2>박스오피스</h2>
+
+                    {TRENDINGDATA.map((el, idx) => {
+                        return (
+                            <ul key={idx}>
+                                <li>{el.id}</li>
+                                <li>{el.title}</li>
+                                <li>
+                                    <img src={"https://image.tmdb.org/t/p/w500/" + el.backdrop_path} />
+                                </li>
+                            </ul>
+                        );
+                    })}
 
                     {/* {NAVERMOVIE.map((el, idx) => {
                         return (

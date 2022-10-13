@@ -13,10 +13,26 @@ import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
 import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
 import { NAVERMOVIEDATA } from "./data/NAVERDATA";
+import { instance, category } from "./data/TMDBDATA";
+import { useEffect, useState } from "react";
 
 const App = () => {
     const BOXDATA = BOXOFFICEDATA();
     const NAVERMOVIE = NAVERMOVIEDATA();
+
+    const [itm, setItm] = useState([]);
+
+    useEffect(() => {
+        getTMDB();
+        console.log("getTMDB");
+    }, []);
+
+    const getTMDB = async () => {
+        const res = await instance.get(category.trending);
+        console.log(res.data);
+        const trendingData = res.data.results;
+        setItm(trendingData);
+    };
 
     return (
         <>
@@ -26,7 +42,7 @@ const App = () => {
                 <Wrapper>
                     <Header />
                     <Routes>
-                        <Route path="/" element={<Main BOXDATA={BOXDATA} NAVERMOVIE={NAVERMOVIE} />} />
+                        <Route path="/" element={<Main TRENDINGDATA={itm} BOXDATA={BOXDATA} NAVERMOVIE={NAVERMOVIE} />} />
                         <Route path="/theater" element={<Theater />} />
                         <Route path="/event/*" element={<Event />} />
                         <Route path="/store/*" element={<Store />} />
