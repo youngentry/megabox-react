@@ -85,54 +85,68 @@ const Theater = () => {
     return (
         <section className="Theater">
             <div className="container">
-                <h2>전체극장</h2>
-                <div className="find">
-                    <div className="district">
-                        {THEATER.map((el, index) => {
-                            return (
-                                <ul key={el.id} className={`region ${el.id === region + 1 ? "on" : ""}`}>
-                                    <li>
-                                        <strong
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                setRegion(index);
-                                            }}
-                                        >
-                                            {el.region}
-                                        </strong>
+                <ul>
+                    <li>
+                        <h2>전체극장</h2>
+                        <div className="find">
+                            <div className="district">
+                                {THEATER.map((el, index) => {
+                                    return (
+                                        <ul key={el.id} className={`region ${el.id === region + 1 ? "on" : ""}`}>
+                                            <li>
+                                                <strong
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        setRegion(index);
+                                                    }}
+                                                >
+                                                    {el.region}
+                                                </strong>
+                                            </li>
+                                        </ul>
+                                    );
+                                })}
+                            </div>
+                            <div className="place">
+                                {THEATER.map((el, idx) => (
+                                    <li key={idx} className={`city ${el.id === region + 1 ? "on" : ""}`}>
+                                        <ul>
+                                            {el.city.map((li, idx) => (
+                                                <li key={idx}>
+                                                    <Link to="#">{li}</Link>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </li>
-                                </ul>
-                            );
-                        })}
-                    </div>
-                    <div className="place">
-                        {THEATER.map((el, idx) => (
-                            <li key={idx} className={`city ${el.id === region + 1 ? "on" : ""}`}>
-                                <ul>
-                                    {el.city.map((li, idx) => (
-                                        <li key={idx}>
-                                            <Link to="#">{li}</Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </li>
-                        ))}
-                    </div>
-                    <div className="interest">
-                        <span>나의 선호영화관 정보</span>
-                        <Link to="#">
-                            <button>로그인하기</button>
-                        </Link>
-                    </div>
-                </div>
-                <div className="title theaterEvent">
-                    <h3>극장 이벤트</h3>
-                    <Link className="more" to="/event/theater">
-                        <span>더보기</span> <FaAngleRight />
-                    </Link>
-                </div>
-                {/* Theater > .recoEvent 백그라운드, 패딩, p, h3 {display:none}  */}
-                <Recommendation />
+                                ))}
+                            </div>
+                            <div className="interest">
+                                <span>나의 선호영화관 정보</span>
+                                <Link to="#">
+                                    <button>로그인하기</button>
+                                </Link>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="title theaterEvent">
+                            <h3>극장 이벤트</h3>
+                            <Link className="more" to="/event/theater">
+                                <span>더보기</span> <FaAngleRight />
+                            </Link>
+                        </div>
+                        {/* Theater > .recoEvent 백그라운드, 패딩, p, h3 {display:none}  */}
+                        <Recommendation />
+                    </li>
+                    <li>
+                        <div className="title theaterEvent">
+                            <h3>극장 공지사항</h3>
+                            <Link className="more" to="/event/theater">
+                                <span>더보기</span> <FaAngleRight />
+                            </Link>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
     );
