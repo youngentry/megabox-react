@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Movie from "../../components/Movie";
 import "../../css/main/Main.scss";
 
-const Main = ({ BOXDATA, NAVERMOVIE, TRENDINGDATA }) => {
+const Main = ({ BOXDATA, NAVERMOVIE, RATEDDATA }) => {
     const [showCount, setShowCount] = useState(1);
 
     return (
@@ -13,7 +13,7 @@ const Main = ({ BOXDATA, NAVERMOVIE, TRENDINGDATA }) => {
                 <div className="container">
                     <h2>박스오피스</h2>
 
-                    {TRENDINGDATA.map((el, idx) => {
+                    {RATEDDATA.map((el, idx) => {
                         return (
                             <ul key={idx}>
                                 <li>{el.id}</li>

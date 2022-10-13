@@ -13,7 +13,7 @@ import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
 import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
 import { NAVERMOVIEDATA } from "./data/NAVERDATA";
-import { instance, category } from "./data/TMDBDATA";
+import { instance, category, getTMDBTGenre, getTMDBRated } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
 
 const App = () => {
@@ -42,7 +42,7 @@ const App = () => {
                 <Wrapper>
                     <Header />
                     <Routes>
-                        <Route path="/" element={<Main TRENDINGDATA={itm} BOXDATA={BOXDATA} NAVERMOVIE={NAVERMOVIE} />} />
+                        <Route path="/" element={<Main RATEDDATA={itm} BOXDATA={BOXDATA} NAVERMOVIE={NAVERMOVIE} />} />
                         <Route path="/theater" element={<Theater />} />
                         <Route path="/event/*" element={<Event />} />
                         <Route path="/store/*" element={<Store />} />
