@@ -26,62 +26,62 @@ const MOVIEDATA = [
     },
     {
         id: 5,
-        imgSrc: "m04.jpg",
+        imgSrc: "m05.jpg",
         heart: 155,
     },
     {
         id: 6,
-        imgSrc: "m03.jpg",
+        imgSrc: "m06.jpg",
         heart: 410,
     },
     {
         id: 7,
-        imgSrc: "m02.jpg",
+        imgSrc: "m07.jpg",
         heart: 1400,
     },
     {
         id: 8,
-        imgSrc: "m01.jpg",
+        imgSrc: "m08.jpg",
         heart: 515,
     },
     {
         id: 9,
-        imgSrc: "m01.jpg",
+        imgSrc: "m09.jpg",
         heart: 515,
     },
     {
         id: 10,
-        imgSrc: "m02.jpg",
+        imgSrc: "m10.jpg",
         heart: 1400,
     },
     {
         id: 11,
-        imgSrc: "m03.jpg",
+        imgSrc: "m11.jpg",
         heart: 410,
     },
     {
         id: 12,
-        imgSrc: "m04.jpg",
+        imgSrc: "m12.jpg",
         heart: 155,
     },
     {
         id: 13,
-        imgSrc: "m04.jpg",
+        imgSrc: "m13.jpg",
         heart: 155,
     },
     {
         id: 14,
-        imgSrc: "m03.jpg",
+        imgSrc: "m14.jpg",
         heart: 410,
     },
     {
         id: 15,
-        imgSrc: "m02.jpg",
+        imgSrc: "m15.jpg",
         heart: 1400,
     },
     {
         id: 16,
-        imgSrc: "m01.jpg",
+        imgSrc: "m16.jpg",
         heart: 515,
     },
 ];
@@ -95,7 +95,7 @@ const Movie = ({ BOXDATA, showCount }) => {
                         <li key={el.id}>
                             <Link to="#">
                                 <figure>
-                                    <img src={process.env.PUBLIC_URL + `/assets/img/${el.imgSrc}`} alt="" />
+                                    <img src={process.env.PUBLIC_URL + `/assets/img/main/${el.imgSrc}`} alt="" />
                                 </figure>
                             </Link>
                             <div className="box">

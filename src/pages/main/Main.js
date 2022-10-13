@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FaRegCalendarAlt, FaSearch, FaTicketAlt, FaWindowMaximize } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Movie from "../../components/Movie";
 import "../../css/main/Main.scss";
 
 const Main = ({ BOXDATA, NAVERMOVIE }) => {
-    const showCount = useRef(1);
+    const [showCount, setShowCount] = useState(1);
 
     return (
         <main>

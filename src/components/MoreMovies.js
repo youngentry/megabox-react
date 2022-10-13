@@ -6,7 +6,6 @@ const MoreMovies = ({ setShowCount }) => {
     const showCountPlus = (num) => {
         num.current++;
         setShowCount(num.current);
-        console.log(num);
     };
 
     // const [isNoMore, setIsNoMore] = useState(false);
