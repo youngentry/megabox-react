@@ -24,7 +24,6 @@ const App = () => {
 
     useEffect(() => {
         getTMDB();
-        console.log("getTMDB");
     }, []);
 
     const getTMDB = async () => {
