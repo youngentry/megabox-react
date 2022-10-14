@@ -34,7 +34,7 @@ const Table = ({ theaterTable }) => {
             <tbody>
                 {theaterTable.map((el) => {
                     return (
-                        <tr>
+                        <tr key={el.id}>
                             <td className="numBody">{el.number}</td>
                             <td>{el.place}</td>
                             <td className="title">

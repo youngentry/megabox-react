@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Movie from "../../components/Movie";
 import "../../css/main/Main.scss";
 
-const Main = ({ BOXDATA, NAVERMOVIE, RATEDDATA }) => {
+const Main = ({ BOXDATA, RATEDDATA }) => {
     const [showCount, setShowCount] = useState(1);
 
     return (

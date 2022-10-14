@@ -12,13 +12,13 @@ import "./css/basic.scss";
 import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
 import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
-import { NAVERMOVIEDATA } from "./data/NAVERDATA";
+// import { NAVERMOVIEDATA } from "./data/NAVERDATA";
 import { instance, category, getTMDBTGenre, getTMDBRated } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
 
 const App = () => {
     const BOXDATA = BOXOFFICEDATA();
-    const NAVERMOVIE = NAVERMOVIEDATA();
+    // const NAVERMOVIE = NAVERMOVIEDATA();
 
     const [itm, setItm] = useState([]);
 
@@ -41,7 +41,7 @@ const App = () => {
                 <Wrapper>
                     <Header />
                     <Routes>
-                        <Route path="/" element={<Main RATEDDATA={itm} BOXDATA={BOXDATA} NAVERMOVIE={NAVERMOVIE} />} />
+                        <Route path="/" element={<Main RATEDDATA={itm} BOXDATA={BOXDATA} />} />
                         <Route path="/theater" element={<Theater />} />
                         <Route path="/event/*" element={<Event />} />
                         <Route path="/store/*" element={<Store />} />

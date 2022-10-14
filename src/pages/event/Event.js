@@ -10,7 +10,7 @@ import Promotion from "./Promotion";
 import Theater from "./EventTheater";
 
 const MENUTITLE = [
-    { id: 1, title: "전체", active: "on", link: "/allevent" },
+    { id: 1, title: "전체", link: "/allevent" },
     { id: 2, title: "메가Pick", link: "/megapick" },
     { id: 3, title: "영화", link: "/eventmovie" },
     { id: 4, title: "극장", link: "/theater" },

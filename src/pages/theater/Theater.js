@@ -118,7 +118,7 @@ const Theater = () => {
                             </div>
                             <div className="place">
                                 {THEATER.map((el, idx) => (
-                                    <li key={idx} className={`city ${el.id === region + 1 ? "on" : ""}`}>
+                                    <div key={idx} className={`city ${el.id === region + 1 ? "on" : ""}`}>
                                         <ul>
                                             {el.city.map((li, idx) => (
                                                 <li key={idx}>
@@ -126,7 +126,7 @@ const Theater = () => {
                                                 </li>
                                             ))}
                                         </ul>
-                                    </li>
+                                    </div>
                                 ))}
                             </div>
                             <div className="interest">
