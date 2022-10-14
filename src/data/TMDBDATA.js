@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 const { default: axios } = require("axios");
 
 const url = "https://api.themoviedb.org/3";
@@ -17,8 +15,6 @@ const instance = axios.create({
 const category = {
     trending: "/trending/movie/week",
     genre: "/genre/movie/list",
-    nowPlaying: "movie/now_playing",
-    rated: "/movie/top_rated",
 };
 
 /** genre >>> 0 : {id: 28, name: 'Action'} ~ 18  */

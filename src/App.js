@@ -20,7 +20,7 @@ const App = () => {
     const BOXDATA = BOXOFFICEDATA();
     // const NAVERMOVIE = NAVERMOVIEDATA();
 
-    const [itm, setItm] = useState([]);
+    const [trendingItm, setTrendingItm] = useState([]);
 
     useEffect(() => {
         getTMDB();
@@ -30,7 +30,7 @@ const App = () => {
         const res = await instance.get(category.trending);
         console.log(res.data);
         const trendingData = res.data.results;
-        setItm(trendingData);
+        setTrendingItm(trendingData);
     };
 
     return (
@@ -41,7 +41,7 @@ const App = () => {
                 <Wrapper>
                     <Header />
                     <Routes>
-                        <Route path="/" element={<Main RATEDDATA={itm} BOXDATA={BOXDATA} />} />
+                        <Route path="/" element={<Main RATEDDATA={trendingItm} BOXDATA={BOXDATA} />} />
                         <Route path="/theater" element={<Theater />} />
                         <Route path="/event/*" element={<Event />} />
                         <Route path="/store/*" element={<Store />} />
