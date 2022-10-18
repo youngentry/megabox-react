@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/components/SearchMovie.scss";
 
-const SearchMovie = ({ getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
+const SearchMovie = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
     useEffect(() => {
         // input이벤트는 onChange로 검색어가 변할 때마다 검색결과를 출력하도록 합니다.
         if (searchQuery !== "") {
@@ -19,27 +19,68 @@ const SearchMovie = ({ getTMDBSearch, searchList, setSearchList, searchQuery, se
         }, 500);
     };
 
+    const [num, setNum] = useState(0);
+    const [sNum, setSNum] = useState(0);
+
     return (
         <div className="searchMovie">
-            <ul>
-                {searchList.map((el, idx) => {
-                    return (
-                        <li className="box" key={idx}>
-                            {el.poster_path ? (
-                                <div>
-                                    <span>{el.title}</span>
-                                    <figure>
-                                        <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} alt="" />
-                                    </figure>
-                                </div>
-                            ) : (
-                                ""
-                            )}
-                        </li>
-                    );
-                })}
-            </ul>
-            <input onChange={(e) => querySetTimeout(e)} onSubmit placeholder="검색어를 입력해주세요." />
+            <div className="container">
+                <h3>예매율 순위</h3>
+                <div className="content">
+                    <ul className="left">
+                        {TRENDINGDATA.slice(0, 5).map((el, idx) => {
+                            return (
+                                <li key={idx} className={`${idx === num ? "on" : ""}`}>
+                                    <div className="img">
+                                        <figure>
+                                            <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} alt="" />
+                                        </figure>
+                                    </div>
+                                    <div className="txt">
+                                        <p>
+                                            <span>{idx + 1}</span>
+                                            <strong
+                                                onMouseEnter={() => {
+                                                    setNum(idx);
+                                                }}
+                                            >
+                                                {el.title}
+                                            </strong>
+                                        </p>
+                                    </div>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                    <ul className="right">
+                        <input onChange={(e) => querySetTimeout(e)} placeholder="검색어를 입력해주세요." />
+                        {searchList.slice(0, 7).map((el, idx) => {
+                            return (
+                                <li key={idx} className={`${idx === sNum ? "on" : ""}`}>
+                                    {el.poster_path ? (
+                                        <div className="autoComp">
+                                            <div className="txt">
+                                                <span
+                                                    onMouseEnter={() => {
+                                                        setSNum(idx);
+                                                    }}
+                                                >
+                                                    {el.title}
+                                                </span>
+                                            </div>
+                                            <div className="img">
+                                                <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} alt="" />
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        ""
+                                    )}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            </div>
         </div>
     );
 };

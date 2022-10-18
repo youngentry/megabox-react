@@ -56,8 +56,7 @@ const App = () => {
                 <div>loading...</div>
             ) : (
                 <Wrapper>
-                    <Header />
-                    <SearchMovie getTMDBSearch={getTMDBSearch} searchList={searchList} setSearchList={setSearchList} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+                    <Header TRENDINGDATA={trendingList} getTMDBSearch={getTMDBSearch} searchList={searchList} setSearchList={setSearchList} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                     <Routes>
                         <Route path="/" element={<Main TRENDINGDATA={trendingList} />} />
                         <Route path="/theater" element={<Theater />} />

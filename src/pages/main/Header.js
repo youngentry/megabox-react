@@ -2,8 +2,9 @@ import React from "react";
 import "../../css/main/Header.scss";
 import { FaBars, FaSearch, FaRegCalendarAlt, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SearchMovie from "../../components/SearchMovie";
 
-const Header = () => {
+const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
     return (
         <header className="Header">
             <div className="container">
@@ -87,6 +88,14 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
+                    <SearchMovie
+                        TRENDINGDATA={TRENDINGDATA}
+                        getTMDBSearch={getTMDBSearch}
+                        searchList={searchList}
+                        setSearchList={setSearchList}
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                    />
                 </nav>
             </div>
         </header>

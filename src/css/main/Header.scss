@@ -80,4 +80,23 @@
             }
         }
     }
+    .searchMovie {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+        width: 100%;
+        height: 380px;
+        background: #351f67;
+        z-index: 999;
+
+        ul {
+            h3 {
+                font-size: 21px;
+            }
+        }
+
+        input {
+        }
+    }
 }
