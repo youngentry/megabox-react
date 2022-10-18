@@ -9,11 +9,12 @@
         li {
             display: flex;
             flex-direction: column;
+            margin-bottom: 20px;
 
             .poster {
                 figure {
                     position: relative;
-                    margin-bottom: 5px;
+                    margin-bottom: 10px;
 
                     img {
                         width: 245px;
@@ -73,41 +74,79 @@
             }
 
             .box {
-                display: flex;
-                gap: 5px;
-
-                button {
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-
-                .heart {
-                    display: inline-block;
-                    flex: 1;
-                    padding: 7px 0;
-                    font-size: 14px;
-                    font-weight: 300;
-                    color: #fff;
-                    background: #111;
-                    border-radius: 5px;
-
-                    i {
-                        vertical-align: middle;
+                .title {
+                    font-size: 21px;
+                    &::before {
+                        content: "12";
+                        display: inline-block;
                         margin-right: 5px;
+                        padding: 2px 3px;
+                        font-size: 19px;
+                        font-weight: 700;
+                        background: #e9b630;
+                        color: #fff;
+                        border-radius: 5px;
                     }
                 }
 
-                .buy {
-                    display: inline-block;
-                    flex: 2;
-                    color: #fff;
-                    background: #037b94;
-                    border: none;
-                    border-radius: 5px;
+                .release {
+                    font-size: 15px;
+                    line-height: 2.5;
+                    letter-spacing: 0.015em;
 
-                    &:hover {
-                        background: #037c94c9;
+                    span {
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            vertical-align: -2%;
+                            margin: 0 5px;
+                            width: 1px;
+                            height: 13px;
+                            background: #ddd;
+                        }
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    gap: 5px;
+
+                    button {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .heart {
+                        display: inline-block;
+                        flex: 1;
+                        padding: 9px 0;
+                        font-size: 14px;
+                        font-weight: 300;
+                        color: #fff;
+                        background: #111;
+                        border-radius: 5px;
+                        border: none;
+                        &:hover {
+                            background: rgb(44, 44, 44);
+                        }
+
+                        i {
+                            vertical-align: middle;
+                            margin-right: 5px;
+                        }
+                    }
+
+                    .buy {
+                        display: inline-block;
+                        flex: 2;
+                        color: #fff;
+                        background: #037b94;
+                        border: none;
+                        border-radius: 5px;
+
+                        &:hover {
+                            background: #037c94c9;
+                        }
                     }
                 }
             }

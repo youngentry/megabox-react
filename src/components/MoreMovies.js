@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "../css/components/MoreMovies.scss";
 import { FaAngleDown } from "react-icons/fa";
 

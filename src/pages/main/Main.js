@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Movie from "../../components/Movie";
 import "../../css/main/Main.scss";
 
-const Main = ({ BOXDATA, TRENDINGDATA }) => {
+const Main = ({ TRENDINGDATA }) => {
     const [showCount, setShowCount] = useState(1);
 
     return (
@@ -13,7 +13,7 @@ const Main = ({ BOXDATA, TRENDINGDATA }) => {
                 <div className="container">
                     <h2>박스오피스</h2>
                     <div className="boxOffice">
-                        <Movie TRENDINGDATA={TRENDINGDATA} BOXDATA={BOXDATA} showCount={showCount} />
+                        <Movie TRENDINGDATA={TRENDINGDATA} showCount={showCount} />
                         <ul className="service">
                             <li>
                                 <form action="">

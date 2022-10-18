@@ -21,16 +21,23 @@ const App = () => {
     // const NAVERMOVIE = NAVERMOVIEDATA();
 
     const [trendingList, setTrendingList] = useState([]);
+    const [upcomingList, setUpcomingList] = useState([]);
 
     useEffect(() => {
         getTMDBTrending();
+        getTMDBTUpcoming();
     }, []);
 
     const getTMDBTrending = async () => {
         const res = await instance.get(category.trending);
-        console.log(res.data);
         const trendingData = res.data.results;
         setTrendingList(trendingData);
+    };
+    const getTMDBTUpcoming = async () => {
+        const res = await instance.get(category.upcoming);
+        console.log(res.data);
+        const upcomingData = res.data.results;
+        setUpcomingList(upcomingData);
     };
 
     return (
