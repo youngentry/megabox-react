@@ -13,7 +13,7 @@ const Main = ({ TRENDINGDATA }) => {
                 <div className="container">
                     <h2>박스오피스</h2>
                     <div className="boxOffice">
-                        <Movie TRENDINGDATA={TRENDINGDATA} showCount={showCount} />
+                        <Movie MOVIEDATA={TRENDINGDATA} showCount={showCount} />
                         <ul className="service">
                             <li>
                                 <form action="">

@@ -1,0 +1,12 @@
+.searchMovie {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        .box {
+            img {
+                height: 100px;
+            }
+        }
+    }
+}

@@ -39,7 +39,7 @@ const Header = () => {
                                 </div>
                             </li>
                             <li>
-                                <Link to="/movies">영화</Link>
+                                <Link to="/movies/boxoffice">영화</Link>
                             </li>
                             <li>
                                 <Link to="/ticketing">예매</Link>

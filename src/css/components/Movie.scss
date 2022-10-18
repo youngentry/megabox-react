@@ -10,6 +10,7 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 20px;
+            width: 245px;
 
             .poster {
                 figure {
@@ -75,6 +76,9 @@
 
             .box {
                 .title {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                     font-size: 21px;
                     &::before {
                         content: "12";

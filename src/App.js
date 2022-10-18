@@ -11,49 +11,60 @@ import Movies from "./pages/main/Movies";
 import "./css/basic.scss";
 import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
-import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
+// import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
 // import { NAVERMOVIEDATA } from "./data/NAVERDATA";
 import { instance, category } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
+import SearchMovie from "./components/SearchMovie";
 
 const App = () => {
-    const BOXDATA = BOXOFFICEDATA();
+    // const BOXDATA = BOXOFFICEDATA();
     // const NAVERMOVIE = NAVERMOVIEDATA();
 
     const [trendingList, setTrendingList] = useState([]);
     const [upcomingList, setUpcomingList] = useState([]);
+    const [searchList, setSearchList] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [pagination, setPagination] = useState(1);
 
     useEffect(() => {
         getTMDBTrending();
-        getTMDBTUpcoming();
+        getTMDBUpcoming();
+        setPagination(1);
     }, []);
 
     const getTMDBTrending = async () => {
-        const res = await instance.get(category.trending);
+        const res = await instance.get(category.trending + pagination);
         const trendingData = res.data.results;
         setTrendingList(trendingData);
     };
-    const getTMDBTUpcoming = async () => {
-        const res = await instance.get(category.upcoming);
-        console.log(res.data);
+    const getTMDBUpcoming = async () => {
+        const res = await instance.get(category.upcoming + pagination);
         const upcomingData = res.data.results;
         setUpcomingList(upcomingData);
+    };
+    const getTMDBSearch = async () => {
+        const res = await instance.get(category.search + searchQuery);
+        console.log(res.data.results);
+        const searchData = res.data.results;
+        setSearchList(searchData);
     };
 
     return (
         <>
-            {!BOXDATA ? (
+            {!trendingList ? (
                 <div>loading...</div>
             ) : (
                 <Wrapper>
                     <Header />
+                    <SearchMovie getTMDBSearch={getTMDBSearch} searchList={searchList} setSearchList={setSearchList} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                     <Routes>
-                        <Route path="/" element={<Main TRENDINGDATA={trendingList} BOXDATA={BOXDATA} />} />
+                        <Route path="/" element={<Main TRENDINGDATA={trendingList} />} />
                         <Route path="/theater" element={<Theater />} />
                         <Route path="/event/*" element={<Event />} />
                         <Route path="/store/*" element={<Store />} />
                         <Route path="/benefit/*" element={<Benefit />} />
-                        <Route path="/movies/*" element={<Movies TRENDINGDATA={trendingList} BOXDATA={BOXDATA} />} />
+                        <Route path="/movies/*" element={<Movies TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} />} />
                         <Route path="/ticketing" element={<Ticketing />} />
                     </Routes>
                     <Footer />
