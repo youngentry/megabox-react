@@ -16,8 +16,9 @@ const MENUTITLE = [
 const routeURL = "/movies";
 
 /** App.js > Movies.js에서 movie props전달 rank, movieNm:영화이름, openDt:개봉일*/
-const Movies = ({ BOXDATA }) => {
-    const [showCount, setShowCount] = useState(1);
+const Movies = ({ TRENDINGDATA }) => {
+    const [showCount, setShowCount] = useState(3);
+    console.log(TRENDINGDATA);
 
     return (
         <section className="Movies">
@@ -30,7 +31,7 @@ const Movies = ({ BOXDATA }) => {
                 </Routes>
                 {/** App.js 에서 movie props전달
                   rank:순위, movieNm:영화이름, openDt:개봉일*/}
-                <Movie BOXDATA={BOXDATA} showCount={showCount} />
+                <Movie showCount={showCount} TRENDINGDATA={TRENDINGDATA} />
                 <MoreMovies setShowCount={setShowCount} />
             </div>
         </section>

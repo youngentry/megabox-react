@@ -13,24 +13,24 @@ import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
 import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
 // import { NAVERMOVIEDATA } from "./data/NAVERDATA";
-import { instance, category, getTMDBTGenre, getTMDBRated } from "./data/TMDBDATA";
+import { instance, category } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
 
 const App = () => {
     const BOXDATA = BOXOFFICEDATA();
     // const NAVERMOVIE = NAVERMOVIEDATA();
 
-    const [trendingItm, setTrendingItm] = useState([]);
+    const [trendingList, setTrendingList] = useState([]);
 
     useEffect(() => {
-        getTMDB();
+        getTMDBTrending();
     }, []);
 
-    const getTMDB = async () => {
+    const getTMDBTrending = async () => {
         const res = await instance.get(category.trending);
         console.log(res.data);
         const trendingData = res.data.results;
-        setTrendingItm(trendingData);
+        setTrendingList(trendingData);
     };
 
     return (
@@ -41,12 +41,12 @@ const App = () => {
                 <Wrapper>
                     <Header />
                     <Routes>
-                        <Route path="/" element={<Main RATEDDATA={trendingItm} BOXDATA={BOXDATA} />} />
+                        <Route path="/" element={<Main TRENDINGDATA={trendingList} BOXDATA={BOXDATA} />} />
                         <Route path="/theater" element={<Theater />} />
                         <Route path="/event/*" element={<Event />} />
                         <Route path="/store/*" element={<Store />} />
                         <Route path="/benefit/*" element={<Benefit />} />
-                        <Route path="/movies/*" element={<Movies BOXDATA={BOXDATA} />} />
+                        <Route path="/movies/*" element={<Movies TRENDINGDATA={trendingList} BOXDATA={BOXDATA} />} />
                         <Route path="/ticketing" element={<Ticketing />} />
                     </Routes>
                     <Footer />

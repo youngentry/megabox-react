@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Movie from "../../components/Movie";
 import "../../css/main/Main.scss";
 
-const Main = ({ BOXDATA, RATEDDATA }) => {
+const Main = ({ BOXDATA, TRENDINGDATA }) => {
     const [showCount, setShowCount] = useState(1);
 
     return (
@@ -12,31 +12,8 @@ const Main = ({ BOXDATA, RATEDDATA }) => {
             <section className="MainVisual">
                 <div className="container">
                     <h2>박스오피스</h2>
-
-                    {RATEDDATA.map((el, idx) => {
-                        return (
-                            <ul key={idx}>
-                                <li>{el.id}</li>
-                                <li>{el.title}</li>
-                                <li>
-                                    <img src={"https://image.tmdb.org/t/p/w500/" + el.backdrop_path} />
-                                </li>
-                            </ul>
-                        );
-                    })}
-
-                    {/* {NAVERMOVIE.map((el, idx) => {
-                        return (
-                            <ul key={idx}>
-                                <li>{el.title}</li>
-                                <li>{el.link}</li>
-                                <li>{el.image}</li>
-                            </ul>
-                        );
-                    })} */}
-
                     <div className="boxOffice">
-                        <Movie BOXDATA={BOXDATA} showCount={showCount} />
+                        <Movie TRENDINGDATA={TRENDINGDATA} BOXDATA={BOXDATA} showCount={showCount} />
                         <ul className="service">
                             <li>
                                 <form action="">

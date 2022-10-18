@@ -3,107 +3,33 @@ import { FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../css/components/Movie.scss";
 
-const MOVIEDATA = [
-    {
-        id: 1,
-        imgSrc: "m01.jpg",
-        heart: 515,
-    },
-    {
-        id: 2,
-        imgSrc: "m02.jpg",
-        heart: 1400,
-    },
-    {
-        id: 3,
-        imgSrc: "m03.jpg",
-        heart: 410,
-    },
-    {
-        id: 4,
-        imgSrc: "m04.jpg",
-        heart: 155,
-    },
-    {
-        id: 5,
-        imgSrc: "m05.jpg",
-        heart: 155,
-    },
-    {
-        id: 6,
-        imgSrc: "m06.jpg",
-        heart: 410,
-    },
-    {
-        id: 7,
-        imgSrc: "m07.jpg",
-        heart: 1400,
-    },
-    {
-        id: 8,
-        imgSrc: "m08.jpg",
-        heart: 515,
-    },
-    {
-        id: 9,
-        imgSrc: "m09.jpg",
-        heart: 515,
-    },
-    {
-        id: 10,
-        imgSrc: "m10.jpg",
-        heart: 1400,
-    },
-    {
-        id: 11,
-        imgSrc: "m11.jpg",
-        heart: 410,
-    },
-    {
-        id: 12,
-        imgSrc: "m12.jpg",
-        heart: 155,
-    },
-    {
-        id: 13,
-        imgSrc: "m13.jpg",
-        heart: 155,
-    },
-    {
-        id: 14,
-        imgSrc: "m14.jpg",
-        heart: 410,
-    },
-    {
-        id: 15,
-        imgSrc: "m15.jpg",
-        heart: 1400,
-    },
-    {
-        id: 16,
-        imgSrc: "m16.jpg",
-        heart: 515,
-    },
-];
-
-const Movie = ({ BOXDATA, showCount }) => {
+const Movie = ({ showCount, TRENDINGDATA }) => {
+    console.log(TRENDINGDATA);
     return (
         <div className="Movie">
             <ul>
-                {MOVIEDATA.slice(0, 4 * showCount).map((el) => {
+                {TRENDINGDATA.slice(0, 4 * showCount).map((el) => {
                     return (
                         <li key={el.id}>
                             <Link to="#">
-                                <figure>
-                                    <img src={process.env.PUBLIC_URL + `/assets/img/main/${el.imgSrc}`} alt="" />
-                                </figure>
+                                <div className="poster">
+                                    <figure>
+                                        <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} alt="" />
+                                        <div className="inner">
+                                            <p className="overview">{el.overview.slice(0, 200)}</p>
+                                            <p className="vote">
+                                                관람평 <span>{el.vote_average.toString().slice(0, 3)}</span>
+                                            </p>
+                                        </div>
+                                    </figure>
+                                </div>
                             </Link>
                             <div className="box">
                                 <button className="heart">
                                     <i>
                                         <FaRegHeart />
                                     </i>
-                                    {el.heart}
+                                    {el.vote_count}
                                 </button>
                                 <button className="buy">예매</button>
                             </div>
@@ -111,19 +37,6 @@ const Movie = ({ BOXDATA, showCount }) => {
                     );
                 })}
             </ul>
-            <div className="movieBox">
-                {/** App.js > Movies.js 에서 movie props전달
-                  rank, movieNm:영화이름, openDt:개봉일*/}
-                {/* {BOXDATA.map((el, idx) => {
-                    return (
-                        <ul key={idx}>
-                            <li>{el.rank}</li>
-                            <li>{el.movieNm}</li>
-                            <li>{el.openDt}</li>
-                        </ul>
-                    );
-                })} */}
-            </div>
         </div>
     );
 };
