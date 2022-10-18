@@ -4,19 +4,21 @@ import "../css/components/SearchMovie.scss";
 const SearchMovie = ({ getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
     useEffect(() => {
         // input이벤트는 onChange로 검색어가 변할 때마다 검색결과를 출력하도록 합니다.
-        // 검색어를 입력하면 1초 뒤 결과를 출력합니다.
         if (searchQuery !== "") {
-            setTimeout(() => {
-                getTMDBSearch();
-            }, 1000);
+            getTMDBSearch();
             // 검색창이 비어있다면 검색결과를 삭제합니다.
+        } else if (searchQuery === "") {
+            setSearchList([]);
         }
-        // else if (searchQuery === "") {
-        //     setTimeout(() => {
-        //         setSearchList([]);
-        //     }, 1000);
-        // }
     }, [searchQuery]);
+
+    // 검색어를 입력할 때마다 바꾸지 않고 입력하고 잠깐 기다렸다가 출력되도록 하려면 이벤트에 setTimeout을 합니다.
+    const querySetTimeout = (e) => {
+        setTimeout(() => {
+            setSearchQuery(e.target.value);
+        }, 500);
+    };
+
     return (
         <div className="searchMovie">
             <ul>
@@ -37,7 +39,7 @@ const SearchMovie = ({ getTMDBSearch, searchList, setSearchList, searchQuery, se
                     );
                 })}
             </ul>
-            <input onChange={(e) => setSearchQuery(e.target.value)} placeholder="검색어를 입력해주세요." />
+            <input onChange={(e) => querySetTimeout(e)} onSubmit placeholder="검색어를 입력해주세요." />
         </div>
     );
 };
