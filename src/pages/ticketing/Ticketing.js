@@ -313,7 +313,7 @@ const Ticketing = ({ TRENDINGDATA }) => {
                                 {TIME.map((el, idx) => {
                                     return (
                                         <li
-                                            key={el.idx}
+                                            key={idx}
                                             className={`${timeNum === idx ? "on" : ""}`}
                                             onClick={() => {
                                                 setTimeNum(idx);
