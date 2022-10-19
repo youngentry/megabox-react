@@ -6,8 +6,6 @@
 .Ticketing {
     margin-bottom: 50px;
     .container {
-        // border: 1px solid red;
-
         h2 {
             @include setH2;
         }
@@ -30,9 +28,27 @@
 
                 .date {
                     display: flex;
+                    align-items: center;
+                    margin: 0 auto;
+
+                    div {
+                        padding: 0 5px;
+                        font-size: 21px;
+                        transform: translateY(4%);
+                        cursor: pointer;
+                    }
 
                     li {
                         padding: 13px;
+                        cursor: pointer;
+                        &:hover {
+                            background: #ddd;
+                        }
+                        &.on {
+                            background: #777;
+                            color: #fff;
+                        }
+
                         strong {
                             &::after {
                                 content: "";
@@ -49,7 +65,8 @@
                 }
                 .calendar {
                     border-left: 1px solid #ddd;
-                    padding: 13px;
+                    padding: 11px;
+                    cursor: pointer;
                 }
             }
             .choice {
@@ -77,9 +94,29 @@
                 ul {
                     padding: 10px 20px;
                     li {
+                        position: relative;
                         display: flex;
-                        padding: 5px 0;
+                        padding: 5px;
                         align-items: center;
+                        cursor: pointer;
+                        &:hover {
+                            background: #ddd;
+                        }
+
+                        &.on {
+                            color: #fff;
+                            background: #777;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 50%;
+                                right: 0;
+                                width: 10px;
+                                height: 10px;
+                                transform: translateX(50%) translateY(-50%) rotate(45deg);
+                                background: #777;
+                            }
+                        }
                     }
                 }
 
@@ -99,21 +136,37 @@
                     border-right: 1px solid#ddd;
                     .box {
                         display: flex;
+
+                        li {
+                            &.on {
+                                color: #fff;
+                                background: #777;
+                            }
+                        }
                     }
                     .selRegion {
                         flex: 2;
                         border-right: 1px solid#ddd;
                     }
                     .selTheater {
+                        opacity: 0;
+                        visibility: hidden;
                         flex: 3;
-                        display: flex;
-                        flex-direction: column;
+                        &.clicked {
+                            opacity: 1;
+                            visibility: visible;
+                        }
                     }
                 }
                 .time {
                     flex: 5;
-                    display: flex;
+                    opacity: 0;
+                    visibility: hidden;
                     flex-direction: column;
+                    &.clicked {
+                        opacity: 1;
+                        visibility: visible;
+                    }
 
                     h4 {
                         border-bottom: none;
@@ -135,13 +188,29 @@
                     // choice 부모 ul li 상속 예외
                     .tab {
                         display: flex;
-                        justify-content: space-between;
                         padding: 0 20px;
                         margin: 0;
                         font-size: 17px;
                         border-bottom: 1px solid #ddd;
                         li {
+                            width: 100%;
                             margin: 0;
+                            justify-content: center;
+                            &.on {
+                                color: #fff;
+                                background: #777;
+                                &::after {
+                                    content: "";
+                                    display: none;
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 0;
+                                    width: 10px;
+                                    height: 10px;
+                                    transform: translateX(50%) translateY(-50%) rotate(45deg);
+                                    background: #777;
+                                }
+                            }
                         }
                     }
                     .selTime {
@@ -151,7 +220,7 @@
                         }
 
                         li {
-                            padding: 35px 20px;
+                            padding: 15px 20px;
                             border-bottom: 1px solid #ddd;
                             .left {
                                 display: flex;
@@ -193,7 +262,7 @@
                                     .seat {
                                         font-size: 13px;
                                         font-weight: 400;
-                                        padding: 2px 5px;
+                                        padding: 2px 8px;
                                         border: 1px solid #ddd;
                                     }
                                 }

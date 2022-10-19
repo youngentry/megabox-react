@@ -39,7 +39,6 @@ const App = () => {
     };
     const getTMDBSearch = async () => {
         const res = await instance.get(category.search + searchQuery);
-        console.log(res.data.results);
         const searchData = res.data.results;
         setSearchList(searchData);
     };
