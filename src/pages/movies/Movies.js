@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Menus from "../../components/Menus";
 import MoreMovies from "../../components/MoreMovies";
 import Movie from "../../components/Movie";
-import SearchMovie from "../../components/SearchMovie";
-import "../../css/main/Movies.scss";
+import "../../css/movies/Movies.scss";
 import Boxoffice from "../movies/Boxoffice";
 import Comingsoon from "../movies/Comingsoon";
 

@@ -1,3 +1,5 @@
+@import "../basic";
+
 .Movie {
     margin-bottom: 50px;
 
@@ -80,17 +82,7 @@
                     white-space: nowrap;
                     text-overflow: ellipsis;
                     font-size: 21px;
-                    &::before {
-                        content: "12";
-                        display: inline-block;
-                        margin-right: 5px;
-                        padding: 2px 3px;
-                        font-size: 19px;
-                        font-weight: 700;
-                        background: #e9b630;
-                        color: #fff;
-                        border-radius: 5px;
-                    }
+                    @include setAge;
                 }
 
                 .release {

@@ -1,0 +1,207 @@
+@import "../basic";
+
+* {
+}
+
+.Ticketing {
+    margin-bottom: 50px;
+    .container {
+        // border: 1px solid red;
+
+        h2 {
+            @include setH2;
+        }
+
+        h4 {
+            padding: 10px 0 10px 15px;
+            font-size: 19px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid #000;
+            .days {
+                display: flex;
+                justify-content: space-between;
+                border-right: 1px solid #ddd;
+                border-left: 1px solid #ddd;
+
+                .date {
+                    display: flex;
+
+                    li {
+                        padding: 13px;
+                        strong {
+                            &::after {
+                                content: "";
+                                display: inline-block;
+                                margin: 0 2px;
+                                width: 2px;
+                                height: 2px;
+                                border-radius: 50%;
+                                background: #999;
+                                vertical-align: 27%;
+                            }
+                        }
+                    }
+                }
+                .calendar {
+                    border-left: 1px solid #ddd;
+                    padding: 13px;
+                }
+            }
+            .choice {
+                display: flex;
+                justify-content: space-between;
+                border: 1px solid #ddd;
+                font-size: 15px;
+
+                .scroll {
+                    overflow-y: scroll;
+                    height: 450px;
+                    width: 100%;
+                    &::-webkit-scrollbar {
+                        width: 6px; /* 스크롤바의 너비 */
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background: #555555; /* 스크롤바의 색상 */
+                        border-radius: 10px;
+                    }
+                    &::-webkit-scrollbar-track {
+                        background: rgba(33, 122, 244, 0.1); /*스크롤바 뒷 배경 색상*/
+                    }
+                }
+
+                ul {
+                    padding: 10px 20px;
+                    li {
+                        display: flex;
+                        padding: 5px 0;
+                        align-items: center;
+                    }
+                }
+
+                .movie {
+                    flex: 3;
+                    border-right: 1px solid#ddd;
+
+                    .selMovie {
+                        @include setAge;
+                        &::before {
+                            transform: scale(0.8);
+                        }
+                    }
+                }
+                .theater {
+                    flex: 4;
+                    border-right: 1px solid#ddd;
+                    .box {
+                        display: flex;
+                    }
+                    .selRegion {
+                        flex: 2;
+                        border-right: 1px solid#ddd;
+                    }
+                    .selTheater {
+                        flex: 3;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+                .time {
+                    flex: 5;
+                    display: flex;
+                    flex-direction: column;
+
+                    h4 {
+                        border-bottom: none;
+                    }
+                    .top {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1px solid #ddd;
+                        .sun {
+                            margin-right: 20px;
+                            font-size: 13px;
+                            font-weight: 500;
+                            span {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                    // choice 부모 ul li 상속 예외
+                    .tab {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0 20px;
+                        margin: 0;
+                        font-size: 17px;
+                        border-bottom: 1px solid #ddd;
+                        li {
+                            margin: 0;
+                        }
+                    }
+                    .selTime {
+                        padding: 0;
+                        &.scroll {
+                            height: 422px;
+                        }
+
+                        li {
+                            padding: 35px 20px;
+                            border-bottom: 1px solid #ddd;
+                            .left {
+                                display: flex;
+                                strong {
+                                    font-size: 19px;
+                                    font-weight: 500;
+                                    margin-bottom: 3px;
+                                }
+                                span {
+                                    font-size: 14px;
+                                }
+                                .showTime {
+                                    display: flex;
+                                    flex-direction: column;
+                                    margin-right: 30px;
+                                }
+                                .show {
+                                    display: flex;
+                                    flex-direction: column;
+                                    transform: translateY(3%);
+
+                                    strong {
+                                        font-size: 17px;
+                                    }
+                                    span {
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+                            .right {
+                                margin-left: auto;
+                                .where {
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                    text-align: end;
+                                    div {
+                                        margin-bottom: 3px;
+                                    }
+                                    .seat {
+                                        font-size: 13px;
+                                        font-weight: 400;
+                                        padding: 2px 5px;
+                                        border: 1px solid #ddd;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

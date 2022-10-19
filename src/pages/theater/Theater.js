@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import "../../css/main/Theater.scss";
-import Event from "../event/Event";
-import Events from "../event/Events";
+import "../../css/theater/Theater.scss";
 import Recommendation from "../event/Recommendation";
 import Table from "../../components/Table";
 

@@ -5,22 +5,16 @@ import Header from "./pages/main/Header";
 import Main from "./pages/main/Main";
 import Theater from "./pages/theater/Theater";
 import Event from "./pages/event/Event";
-import Ticketing from "./pages/main/Ticketing";
+import Ticketing from "./pages/ticketing/Ticketing";
 import Footer from "./pages/main/Footer";
-import Movies from "./pages/main/Movies";
+import Movies from "./pages/movies/Movies";
 import "./css/basic.scss";
 import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
-// import { BOXOFFICEDATA } from "./data/BOXOFFICEDATA";
-// import { NAVERMOVIEDATA } from "./data/NAVERDATA";
 import { instance, category } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
-import SearchMovie from "./components/SearchMovie";
 
 const App = () => {
-    // const BOXDATA = BOXOFFICEDATA();
-    // const NAVERMOVIE = NAVERMOVIEDATA();
-
     const [trendingList, setTrendingList] = useState([]);
     const [upcomingList, setUpcomingList] = useState([]);
     const [searchList, setSearchList] = useState([]);
@@ -64,7 +58,7 @@ const App = () => {
                         <Route path="/store/*" element={<Store />} />
                         <Route path="/benefit/*" element={<Benefit />} />
                         <Route path="/movies/*" element={<Movies TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} />} />
-                        <Route path="/ticketing" element={<Ticketing />} />
+                        <Route path="/ticketing" element={<Ticketing TRENDINGDATA={trendingList} />} />
                     </Routes>
                     <Footer />
                 </Wrapper>
