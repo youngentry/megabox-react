@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../css/main/Header.scss";
-import { FaBars, FaSearch, FaRegCalendarAlt, FaUserAlt } from "react-icons/fa";
+import { FaBars, FaSearch, FaRegCalendarAlt, FaUserAlt, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SearchMovie from "../../components/SearchMovie";
+import { BsFillXCircleFill, IconName } from "react-icons/bs";
 
 const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
+    const [searchVisual, setSearchVisual] = useState(false);
+
     return (
         <header className="Header">
             <div className="container">
@@ -34,8 +37,11 @@ const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, search
                                     </i>
                                 </div>
                                 <div>
-                                    <i>
+                                    <i className={`searchI ${searchVisual ? "on" : ""}`} onClick={() => setSearchVisual(!searchVisual)}>
                                         <FaSearch />
+                                    </i>
+                                    <i className={`closeI ${searchVisual ? "" : "on"}`} onClick={() => setSearchVisual(!searchVisual)}>
+                                        <BsFillXCircleFill />
                                     </i>
                                 </div>
                             </li>
@@ -89,6 +95,7 @@ const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, search
                         </ul>
                     </div>
                     <SearchMovie
+                        searchVisual={searchVisual}
                         TRENDINGDATA={TRENDINGDATA}
                         getTMDBSearch={getTMDBSearch}
                         searchList={searchList}

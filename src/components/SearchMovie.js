@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/components/SearchMovie.scss";
 
-const SearchMovie = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
+const SearchMovie = ({ searchVisual, TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
     useEffect(() => {
         // input이벤트는 onChange로 검색어가 변할 때마다 검색결과를 출력하도록 합니다.
         if (searchQuery !== "") {
@@ -23,7 +23,7 @@ const SearchMovie = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, s
     const [sNum, setSNum] = useState(0);
 
     return (
-        <div className="searchMovie">
+        <div className={`searchMovie ${searchVisual ? "on" : ""}`}>
             <div className="container">
                 <h3>예매율 순위</h3>
                 <div className="content">
@@ -53,7 +53,7 @@ const SearchMovie = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, s
                         })}
                     </ul>
                     <ul className="right">
-                        <input onChange={(e) => querySetTimeout(e)} placeholder="검색어를 입력해주세요." />
+                        <input onChange={(e) => querySetTimeout(e)} placeholder="영화이름으로 검색하세요.     ex) 토르" />
                         {searchList.slice(0, 7).map((el, idx) => {
                             return (
                                 <li key={idx} className={`${idx === sNum ? "on" : ""}`}>
