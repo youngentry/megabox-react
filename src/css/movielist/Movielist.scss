@@ -1,0 +1,103 @@
+.Movielist {
+    .mainVisual {
+        color: #fff;
+        background: #0f0f0f;
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+
+                background: linear-gradient(to right, #0f0f0f, #0f0f0f8a);
+                z-index: 997;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50%;
+                height: 100%;
+                background: linear-gradient(to left, #0f0f0f, #0f0f0f8a);
+
+                z-index: 997;
+            }
+
+            .left {
+                position: relative;
+                margin-top: 50px;
+                z-index: 998;
+
+                .title {
+                    margin-bottom: 15px;
+                    h2 {
+                        font-size: 46px;
+                        margin-bottom: 15px;
+                    }
+                    span {
+                        font-size: 21px;
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: 180px;
+
+                    button {
+                        font-size: 15px;
+                        width: 100px;
+                        height: 35px;
+                        color: #fff;
+                        background: none;
+                        border: 1px solid #999;
+                        border-radius: 5px;
+
+                        span {
+                            margin-left: 3px;
+                            vertical-align: 11%;
+                        }
+                    }
+                }
+
+                .visit {
+                    display: flex;
+                }
+                .backdrop {
+                    position: absolute;
+                }
+            }
+
+            .right {
+                z-index: 998;
+
+                figure {
+                    margin-bottom: 10px;
+                    img {
+                        width: 260px;
+                        height: 374px;
+                        border-radius: 5px;
+                    }
+                }
+
+                button {
+                    padding: 10px 0;
+                    width: 100%;
+                    font-size: 19px;
+                    color: #fff;
+                    background: #329eb1;
+                    border: none;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

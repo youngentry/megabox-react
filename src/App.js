@@ -13,6 +13,7 @@ import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
 import { instance, category } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
+import Movielist from "./pages/movielist/Movielist";
 
 const App = () => {
     const [trendingList, setTrendingList] = useState([]);
@@ -58,6 +59,7 @@ const App = () => {
                         <Route path="/benefit/*" element={<Benefit />} />
                         <Route path="/movies/*" element={<Movies TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} />} />
                         <Route path="/ticketing" element={<Ticketing TRENDINGDATA={trendingList} />} />
+                        <Route path="/list/:id" element={<Movielist TRENDINGDATA={trendingList} getTMDBTrending={getTMDBTrending} />} />
                     </Routes>
                     <Footer />
                 </Wrapper>

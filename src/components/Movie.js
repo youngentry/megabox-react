@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import "../css/components/Movie.scss";
 
 const Movie = ({ showCount, MOVIEDATA, pagination, setPagination }) => {
-    // isMovie 기능 :
-    // 무비페이지에서는 타이틀, 예매율, 개봉일 표시하고
-    // 메인페이지에서는 찜과 예매 버튼만 표시합니다.
     const [isMovie, setIsMovie] = useState(false);
 
     useEffect(() => {
@@ -17,12 +14,15 @@ const Movie = ({ showCount, MOVIEDATA, pagination, setPagination }) => {
 
     return (
         <div className="Movie">
+            {/*  isMovie 기능 :
+            무비페이지에서는 타이틀, 예매율, 개봉일 표시하고
+            메인페이지에서는 찜과 예매 버튼만 표시합니다. */}
             {isMovie ? (
                 <ul>
                     {MOVIEDATA.slice(0, 4 * showCount).map((el) => {
                         return (
                             <li key={el.id}>
-                                <Link to="#">
+                                <Link to={`/list/${el.id}`}>
                                     <div className="poster">
                                         <figure>
                                             <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} alt="" />

@@ -3,6 +3,7 @@ import React from "react";
 const Wrapper = ({ children }) => {
     const style = {
         overflow: "hidden",
+        minWidth: "1100px",
     };
 
     return (
