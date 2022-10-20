@@ -1,4 +1,4 @@
-import { FaRegHeart, FaShareAlt } from "react-icons/fa";
+import { FaMedium, FaRegHeart, FaShareAlt, FaTicketAlt } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import "../../css/movielist/Movielist.scss";
 
@@ -34,10 +34,22 @@ const Movielist = ({ TRENDINGDATA }) => {
                             </div>
                             <div className="visit">
                                 <div>
-                                    <span>예매율</span>
+                                    <span>관람 평점</span>
+                                    <strong>
+                                        <i>
+                                            <FaMedium />
+                                        </i>
+                                        {String(findData.vote_average).slice(0, 3)}
+                                    </strong>
                                 </div>
-                                <div>
-                                    <span>누적관객수</span>
+                                <div className="rate">
+                                    <span>예매율</span>
+                                    <strong>
+                                        <i>
+                                            <FaTicketAlt />
+                                        </i>
+                                        10.0%
+                                    </strong>
                                 </div>
                             </div>
                             {/* <figure className="backdrop">
@@ -53,8 +65,7 @@ const Movielist = ({ TRENDINGDATA }) => {
                                 <button>예매하기</button>
                             </div>
                         </div>
-                        {/* <div>평점{findData.vote_average}</div>
-                        <div>오버뷰{findData.overview}</div>
+                        {/* <div>오버뷰{findData.overview}</div>
                         <div>개봉일{findData.release_date}</div> */}
                     </div>
                 </div>

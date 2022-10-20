@@ -8,27 +8,23 @@
             display: flex;
             justify-content: space-between;
             padding: 50px 0;
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 50%;
-                height: 100%;
 
-                background: linear-gradient(to right, #0f0f0f, #0f0f0f8a);
-                z-index: 997;
-            }
+            &::before,
             &::after {
                 content: "";
                 position: absolute;
                 top: 0;
-                right: 0;
                 width: 50%;
                 height: 100%;
-                background: linear-gradient(to left, #0f0f0f, #0f0f0f8a);
-
                 z-index: 997;
+            }
+            &::before {
+                left: 0;
+                background: linear-gradient(to right, #0f0f0f, #0f0f0f8a);
+            }
+            &::after {
+                right: 0;
+                background: linear-gradient(to left, #0f0f0f, #0f0f0f8a);
             }
 
             .left {
@@ -40,6 +36,7 @@
                     margin-bottom: 15px;
                     h2 {
                         font-size: 46px;
+                        font-weight: 500;
                         margin-bottom: 15px;
                     }
                     span {
@@ -60,6 +57,11 @@
                         background: none;
                         border: 1px solid #999;
                         border-radius: 5px;
+                        cursor: pointer;
+                        &:hover {
+                            background: #fff;
+                            color: #000;
+                        }
 
                         span {
                             margin-left: 3px;
@@ -70,6 +72,31 @@
 
                 .visit {
                     display: flex;
+                    gap: 30px;
+                    color: #ddd;
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    i {
+                        font-size: 26px;
+                        margin-right: 10px;
+                        vertical-align: middle;
+                        color: #777;
+                    }
+                    span {
+                        margin-bottom: 20px;
+                    }
+                    strong {
+                        font-size: 32px;
+                        color: #59bec9;
+                    }
+
+                    .rate {
+                        strong {
+                            color: #fff;
+                        }
+                    }
                 }
                 .backdrop {
                     position: absolute;
@@ -93,9 +120,13 @@
                     width: 100%;
                     font-size: 19px;
                     color: #fff;
-                    background: #329eb1;
+                    background: #2a8595;
                     border: none;
                     border-radius: 5px;
+                    cursor: pointer;
+                    &:hover {
+                        background: #309db0;
+                    }
                 }
             }
         }

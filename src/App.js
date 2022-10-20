@@ -59,7 +59,7 @@ const App = () => {
                         <Route path="/benefit/*" element={<Benefit />} />
                         <Route path="/movies/*" element={<Movies TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} />} />
                         <Route path="/ticketing" element={<Ticketing TRENDINGDATA={trendingList} />} />
-                        <Route path="/list/:id" element={<Movielist TRENDINGDATA={trendingList} getTMDBTrending={getTMDBTrending} />} />
+                        <Route path="/detail/:id" element={<Movielist TRENDINGDATA={trendingList} />} />
                     </Routes>
                     <Footer />
                 </Wrapper>

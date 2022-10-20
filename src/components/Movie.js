@@ -22,7 +22,7 @@ const Movie = ({ showCount, MOVIEDATA, pagination, setPagination }) => {
                     {MOVIEDATA.slice(0, 4 * showCount).map((el) => {
                         return (
                             <li key={el.id}>
-                                <Link to={`/list/${el.id}`}>
+                                <Link to={`/detail/${el.id}`}>
                                     <div className="poster">
                                         <figure>
                                             <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} alt="" />
@@ -70,7 +70,7 @@ const Movie = ({ showCount, MOVIEDATA, pagination, setPagination }) => {
                     {MOVIEDATA.slice(0, 4 * showCount).map((el) => {
                         return (
                             <li key={el.id}>
-                                <Link to="#">
+                                <Link to={`/detail/${el.id}`}>
                                     <div className="poster">
                                         <figure>
                                             <img src={"https://image.tmdb.org/t/p/w500/" + el.poster_path} alt="" />
