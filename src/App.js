@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 
 import Wrapper from "./pages/Wrapper";
 import Header from "./pages/main/Header";
@@ -13,7 +13,7 @@ import Store from "./pages/store/Store";
 import Benefit from "./pages/benefit/Benefit";
 import { instance, category } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
-import Movielist from "./pages/movielist/Movielist";
+import Movielist from "./pages/movielist/Detail";
 
 const App = () => {
     const [trendingList, setTrendingList] = useState([]);
@@ -59,7 +59,7 @@ const App = () => {
                         <Route path="/benefit/*" element={<Benefit />} />
                         <Route path="/movies/*" element={<Movies TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} />} />
                         <Route path="/ticketing" element={<Ticketing TRENDINGDATA={trendingList} />} />
-                        <Route path="/detail/:id" element={<Movielist TRENDINGDATA={trendingList} />} />
+                        <Route path="/detail/:id" element={<Movielist TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} />} />
                     </Routes>
                     <Footer />
                 </Wrapper>

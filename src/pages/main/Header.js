@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "../../css/main/Header.scss";
 import { FaBars, FaSearch, FaRegCalendarAlt, FaUserAlt, FaPlus } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SearchMovie from "../../components/SearchMovie";
 import { BsFillXCircleFill, IconName } from "react-icons/bs";
 
 const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
     const [searchVisual, setSearchVisual] = useState(false);
-
     return (
         <header className="Header">
             <div className="container">
@@ -79,7 +78,7 @@ const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, search
                                 <Link to="/benefit/membership">혜택</Link>
                             </li>
                             <li className="icons">
-                                <Link to="#">
+                                <Link to="/ticketing">
                                     <div>
                                         <i>
                                             <FaRegCalendarAlt />

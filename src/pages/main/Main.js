@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { FaRegCalendarAlt, FaSearch, FaTicketAlt, FaWindowMaximize } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Movie from "../../components/Movie";
@@ -6,7 +6,6 @@ import "../../css/main/Main.scss";
 
 const Main = ({ TRENDINGDATA }) => {
     const [showCount, setShowCount] = useState(1);
-
     return (
         <main>
             <section className="MainVisual">
