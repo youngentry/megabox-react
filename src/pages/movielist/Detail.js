@@ -2,7 +2,7 @@ import { FaMedium, FaRegHeart, FaShareAlt, FaTicketAlt } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import "../../css/movielist/Movielist.scss";
 
-const Movielist = ({ TRENDINGDATA, UPCOMINGDATA }) => {
+const Detail = ({ TRENDINGDATA, UPCOMINGDATA, SEARCHDATA }) => {
     const { id } = useParams();
     const findData = TRENDINGDATA.find((el) => {
         return String(el.id) === id;
@@ -10,8 +10,9 @@ const Movielist = ({ TRENDINGDATA, UPCOMINGDATA }) => {
     const findUpcomingData = UPCOMINGDATA.find((el) => {
         return String(el.id) === id;
     });
+    const findSearchData = SEARCHDATA;
     return (
-        <div className="Movielist">
+        <div className="Detail">
             {/* trendingData가 로드되면 출력합니다. */}
             {findData ? (
                 <div className="mainVisual">
@@ -132,6 +133,66 @@ const Movielist = ({ TRENDINGDATA, UPCOMINGDATA }) => {
                             <div>개봉일{findUpcomingData.release_date}</div> */}
                     </div>
                 </div>
+            ) : // findSearchData가 로드되면 출력합니다.
+            findSearchData ? (
+                <div className="mainVisual">
+                    <div className="container" style={{ background: `url(${"https://image.tmdb.org/t/p/w500/" + findSearchData.backdrop_path})no-repeat center center/cover` }}>
+                        <div className="left">
+                            <div className="title">
+                                <h2>{findSearchData.title}</h2>
+                                <span>{findSearchData.original_title}</span>
+                            </div>
+                            <div className="buttons">
+                                <button className="heart">
+                                    <i>
+                                        <FaRegHeart />
+                                    </i>
+                                    <span> {findSearchData.vote_count}</span>
+                                </button>
+                                <button>
+                                    <i>
+                                        <FaShareAlt />
+                                    </i>
+                                    <span>공유하기</span>
+                                </button>
+                            </div>
+                            <div className="visit">
+                                <div>
+                                    <span>관람 평점</span>
+                                    <strong>
+                                        <i>
+                                            <FaMedium />
+                                        </i>
+                                        {String(findSearchData.vote_average).slice(0, 3)}
+                                    </strong>
+                                </div>
+                                <div className="rate">
+                                    <span>예매율</span>
+                                    <strong>
+                                        <i>
+                                            <FaTicketAlt />
+                                        </i>
+                                        10.0%
+                                    </strong>
+                                </div>
+                            </div>
+                            {/* <figure className="backdrop">
+                                    백드롭
+                                    <img src={"https://image.tmdb.org/t/p/w500/" + findSearchData.backdrop_path} alt="" />
+                                </figure> */}
+                        </div>
+                        <div className="right">
+                            <div className="poster">
+                                <figure>
+                                    <img src={"https://image.tmdb.org/t/p/w500/" + findSearchData.poster_path} alt="" />
+                                </figure>
+                                <button>예매하기</button>
+                            </div>
+                        </div>
+                        {/* <div>오버뷰{findSearchData.overview}</div>
+                            <div>개봉일{findSearchData.release_date}</div> */}
+                    </div>
+                </div>
             ) : (
                 // 아무 데이터도 로드되지 않으면 출력합니다.
                 "Detail information not exist..."
@@ -140,4 +201,4 @@ const Movielist = ({ TRENDINGDATA, UPCOMINGDATA }) => {
     );
 };
 
-export default Movielist;
+export default Detail;

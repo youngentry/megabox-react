@@ -1,4 +1,4 @@
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Wrapper from "./pages/Wrapper";
 import Header from "./pages/main/Header";
@@ -14,17 +14,19 @@ import Benefit from "./pages/benefit/Benefit";
 import { instance, category } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
 import Movielist from "./pages/movielist/Detail";
+import Detail from "./pages/movielist/Detail";
 
 const App = () => {
     const [trendingList, setTrendingList] = useState([]);
     const [upcomingList, setUpcomingList] = useState([]);
     const [searchList, setSearchList] = useState([]);
+    const [searchOne, setSearchOne] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [pagination, setPagination] = useState(1);
-
     useEffect(() => {
         getTMDBTrending();
         getTMDBUpcoming();
+        setSearchOne();
         setPagination(1);
     }, []);
 
@@ -43,6 +45,7 @@ const App = () => {
         const searchData = res.data.results;
         setSearchList(searchData);
     };
+    console.log(searchOne);
 
     return (
         <>
@@ -50,7 +53,15 @@ const App = () => {
                 <div>loading...</div>
             ) : (
                 <Wrapper>
-                    <Header TRENDINGDATA={trendingList} getTMDBSearch={getTMDBSearch} searchList={searchList} setSearchList={setSearchList} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+                    <Header
+                        TRENDINGDATA={trendingList}
+                        getTMDBSearch={getTMDBSearch}
+                        searchList={searchList}
+                        setSearchList={setSearchList}
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                        setSearchOne={setSearchOne}
+                    />
                     <Routes>
                         <Route path="/" element={<Main TRENDINGDATA={trendingList} />} />
                         <Route path="/theater" element={<Theater />} />
@@ -59,7 +70,7 @@ const App = () => {
                         <Route path="/benefit/*" element={<Benefit />} />
                         <Route path="/movies/*" element={<Movies TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} />} />
                         <Route path="/ticketing" element={<Ticketing TRENDINGDATA={trendingList} />} />
-                        <Route path="/detail/:id" element={<Movielist TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} />} />
+                        <Route path="/detail/:id" element={<Detail TRENDINGDATA={trendingList} UPCOMINGDATA={upcomingList} SEARCHDATA={searchOne} />} />
                     </Routes>
                     <Footer />
                 </Wrapper>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/components/SearchMovie.scss";
 
-const SearchMovie = ({ searchVisual, TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
+const SearchMovie = ({ searchVisual, TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery, setSearchOne }) => {
     useEffect(() => {
         // input이벤트는 onChange로 검색어가 변할 때마다 검색결과를 출력하도록 합니다.
         if (searchQuery !== "") {
@@ -44,7 +45,7 @@ const SearchMovie = ({ searchVisual, TRENDINGDATA, getTMDBSearch, searchList, se
                                                     setNum(idx);
                                                 }}
                                             >
-                                                {el.title}
+                                                <Link to={`/detail/${el.id}`}>{el.title}</Link>
                                             </strong>
                                         </p>
                                     </div>
@@ -61,11 +62,14 @@ const SearchMovie = ({ searchVisual, TRENDINGDATA, getTMDBSearch, searchList, se
                                         <div className="autoComp">
                                             <div className="txt">
                                                 <span
+                                                    onClick={() => {
+                                                        setSearchOne(searchList[idx]);
+                                                    }}
                                                     onMouseEnter={() => {
                                                         setSNum(idx);
                                                     }}
                                                 >
-                                                    {el.title}
+                                                    <Link to={`/detail/${el.id}`}>{el.title}</Link>
                                                 </span>
                                             </div>
                                             <div className="img">

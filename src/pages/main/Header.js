@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import SearchMovie from "../../components/SearchMovie";
 import { BsFillXCircleFill, IconName } from "react-icons/bs";
 
-const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery }) => {
+const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, searchQuery, setSearchQuery, setSearchOne }) => {
     const [searchVisual, setSearchVisual] = useState(false);
     return (
         <header className="Header">
@@ -36,10 +36,16 @@ const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, search
                                     </i>
                                 </div>
                                 <div>
-                                    <i className={`searchI ${searchVisual ? "on" : ""}`} onClick={() => setSearchVisual(!searchVisual)}>
+                                    {/* 돋보기 아이콘 <-> 닫기 아이콘 전환 */}
+                                    <i
+                                        className={`searchI ${searchVisual ? "on" : ""}`}
+                                        onClick={(e) => {
+                                            setSearchVisual(!searchVisual);
+                                        }}
+                                    >
                                         <FaSearch />
                                     </i>
-                                    <i className={`closeI ${searchVisual ? "" : "on"}`} onClick={() => setSearchVisual(!searchVisual)}>
+                                    <i className={`closeI ${searchVisual ? "" : "on"}`} onClick={(e) => setSearchVisual(!searchVisual)}>
                                         <BsFillXCircleFill />
                                     </i>
                                 </div>
@@ -99,6 +105,7 @@ const Header = ({ TRENDINGDATA, getTMDBSearch, searchList, setSearchList, search
                         getTMDBSearch={getTMDBSearch}
                         searchList={searchList}
                         setSearchList={setSearchList}
+                        setSearchOne={setSearchOne}
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
                     />
