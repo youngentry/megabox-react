@@ -15,6 +15,7 @@ import { instance, category } from "./data/TMDBDATA";
 import { useEffect, useState } from "react";
 import Movielist from "./pages/movielist/Detail";
 import Detail from "./pages/movielist/Detail";
+import ScrollToTop from "./modules/ScrollToTop";
 
 const App = () => {
     const [trendingList, setTrendingList] = useState([]);
@@ -45,7 +46,6 @@ const App = () => {
         const searchData = res.data.results;
         setSearchList(searchData);
     };
-    console.log(searchOne);
 
     return (
         <>

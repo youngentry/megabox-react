@@ -1,5 +1,6 @@
 @import "../basic";
 .MainVisual {
+    margin-bottom: 80px;
     h2 {
         @include setH2;
         margin-top: 70px;

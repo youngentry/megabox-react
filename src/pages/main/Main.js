@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { FaRegCalendarAlt, FaSearch, FaTicketAlt, FaWindowMaximize } from "react-icons/fa";
+import { FaPlus, FaRegCalendarAlt, FaSearch, FaTicketAlt, FaWindowMaximize } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Movie from "../../components/Movie";
 import "../../css/main/Main.scss";
+import Present from "./Present";
 
 const Main = ({ TRENDINGDATA }) => {
     const [showCount, setShowCount] = useState(1);
@@ -50,6 +51,8 @@ const Main = ({ TRENDINGDATA }) => {
                     </div>
                 </div>
             </section>
+
+            <Present />
         </main>
     );
 };
