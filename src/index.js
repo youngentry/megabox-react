@@ -10,7 +10,6 @@ root.render(
     <React.StrictMode>
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <ScrollToTop />
-
             <App />
         </BrowserRouter>
     </React.StrictMode>
