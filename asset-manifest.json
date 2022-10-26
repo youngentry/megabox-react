@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/megabox-react/static/css/main.96b54860.css",
-    "main.js": "/megabox-react/static/js/main.5ac9e8df.js",
+    "main.css": "/megabox-react/static/css/main.9249e1e3.css",
+    "main.js": "/megabox-react/static/js/main.66939362.js",
     "index.html": "/megabox-react/index.html",
-    "main.96b54860.css.map": "/megabox-react/static/css/main.96b54860.css.map",
-    "main.5ac9e8df.js.map": "/megabox-react/static/js/main.5ac9e8df.js.map"
+    "main.9249e1e3.css.map": "/megabox-react/static/css/main.9249e1e3.css.map",
+    "main.66939362.js.map": "/megabox-react/static/js/main.66939362.js.map"
   },
   "entrypoints": [
-    "static/css/main.96b54860.css",
-    "static/js/main.5ac9e8df.js"
+    "static/css/main.9249e1e3.css",
+    "static/js/main.66939362.js"
   ]
 }
