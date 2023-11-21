@@ -2,7 +2,11 @@
 
 GitHub Pages로 배포한 리액트 프로젝트입니다.
 
-주소: https://youngentry.github.io/megabox-react/
+## 링크 
+https://youngentry.github.io/megabox-react/
+
+## 진행 기간 
+2022.10.12 ~ 2022.10.25
 
 ## 구현 화면
 
