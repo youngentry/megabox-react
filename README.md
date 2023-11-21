@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# 영화 검색 API 활용 메가박스 웹 페이지 구현
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GitHub Pages로 배포한 리액트 프로젝트입니다.
 
-## Available Scripts
+주소: https://youngentry.github.io/megabox-react/
 
-In the project directory, you can run:
+## 구현 화면
 
-### `npm start`
+![mega](https://github.com/youngentry/megabox-react/assets/90388461/1e24e61f-d5bf-44c7-81aa-8e9189e5007d)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 영화 검색 및 상세 페이지
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![mega-search](https://github.com/youngentry/megabox-react/assets/90388461/0f25fa72-cd61-47e6-8879-b735abe6ad08)
 
-### `npm test`
+## 영화 페이지
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![mega-movie](https://github.com/youngentry/megabox-react/assets/90388461/e3ecef97-872d-4fe2-be49-77c1d485b1ba)
 
-### `npm run build`
+## 예매 페이지
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![mega-tabs](https://github.com/youngentry/megabox-react/assets/90388461/dfc25084-9bf3-4ec3-bb93-79fed5e26b11)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 극장 페이지
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![mega-theater](https://github.com/youngentry/megabox-react/assets/90388461/d591a135-3d82-4dfa-9f1f-5f468cb20e26)
 
-### `npm run eject`
+## 기타 페이지
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![mega-others](https://github.com/youngentry/megabox-react/assets/90388461/63e5413d-575c-414f-a9f5-367ebc6f7aa2)
